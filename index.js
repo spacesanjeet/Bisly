@@ -234,7 +234,6 @@ client.on("message", (message) => {
         .setDescription("Prefix => b!")
         .addField("ping:", "pong! speed matters!")
         .addField("wtf:", "critisize the HTML language!")
-        .addField("developer:", "information about the bot developer")
         .addField("invite:", "invite for the bot")
         .addField("def:", "get definition from urban dictionary")
         .addField("ava:", "get your or someone's avatar/pfp")
