@@ -12,7 +12,6 @@ setInterval(() => {
 }, 60000);
 // don't delete code above
 
-//test bot
 //still under development
 const { Client, RichEmbed } = require('discord.js'); //entering the bot on discord
 const webdict = require("webdict");
