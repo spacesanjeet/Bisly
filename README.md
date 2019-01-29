@@ -6,6 +6,7 @@ Bisly
 Serverinfo
 Userinfo
 Avatar
+Urban-definitions
 InviteLink
 Welcome-logs
 Say-command
