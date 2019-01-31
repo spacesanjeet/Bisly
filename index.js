@@ -14,7 +14,6 @@ setInterval(() => {
 
 //still under development
 const { Client, RichEmbed } = require('discord.js'); //entering the bot on discord
-const webdict = require("webdict");
 const relevantUrban = require("relevant-urban");
 const client = new Client();
 
