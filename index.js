@@ -51,6 +51,19 @@ client.on('guildMemberAdd', member => {
     channel.send(embed)
 });
 
+client.on('guildMemberRemove', member => {
+    const channel = member.guild.channels.find(ch => ch.name === 'welcome-bye');
+    if (!channel) return;
+    let embed = new RichEmbed()
+    .setTitle("User Left")
+    .setColor("RANDOM")
+    .addField(`${member} just left the server!`)
+    .addField(`MemberCount: ${member.guild.memberCount}`)
+    .setTimestamp(new Date())
+    .setFooter(member.guild)
+    channel.send(embed)
+});
+
 const prefix = "b!";                    //prefix of the bot
 client.on("message", (message) => {
 	//Exit and stop if it's not there
