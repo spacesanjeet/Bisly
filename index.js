@@ -256,7 +256,7 @@ client.on("message", (message) => {
         .addField("userinfo:", "get the user details")
         .addField("say:", "tell something that you want the bot to say")
         .addField("help:", "this shows the help box")
-        .addField("Welcome-logs:", "add a channel named welcome-bye in the server")
+        .addField("Welcome-leave-logs:", "add a channel named welcome-bye in the server")
         .setTimestamp(new Date())
         .setFooter('Requested by: ' + message.author.username)
     message.channel.send(embed)
