@@ -52,17 +52,18 @@ client.on('guildMemberAdd', member => {
 });
 
 client.on('guildMemberRemove', member => {
-    const channel = member.guild.channels.find(ch => ch.name === 'welcome-bye');
-    if (!channel) return;
-    let embed = new RichEmbed()
-    .setTitle("User Left")
-    .setColor("RANDOM")
-    .addField(`${member} just left the server!`)
-    .addField(`MemberCount: ${member.guild.memberCount}`)
-    .setTimestamp(new Date())
-    .setFooter(member.guild)
-    channel.send(embed)
+	const channel = member.guild.channels.find(ch => ch.name === 'welcome-bye');
+	if (!channel) return;
+	let embed = new RichEmbed()
+	.setThumbnail(member.displayAvatarURL)
+	.setTitle("User Left")
+	.setColor("RANDOM")
+	.setDescription(`${member.username}, ServerCount:, ${member.guild.memberCount}`)
+	.setTimestamp(new Date())
+	.setFooter(member.guild)
+	channel.send(embed)
 });
+
 
 const prefix = "b!";                    //prefix of the bot
 client.on("message", (message) => {
