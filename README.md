@@ -1,5 +1,6 @@
 Bisly
 =====
+![Discord Bots](https://discordbots.org/api/widget/496198253193461792.svg)
 <b>A discord chat bot.</b>
 <b>Some command are:-</b>
 <code>Ping
