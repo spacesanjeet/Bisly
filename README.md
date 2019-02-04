@@ -1,7 +1,7 @@
 Bisly
 =====
 # A general purpose discord bot
-:----:![Discord Bots](https://discordbots.org/api/widget/496198253193461792.svg):----:
+![Discord Bots](https://discordbots.org/api/widget/496198253193461792.svg)
   
 # Some commands are as follows
 |Commands          |Usage                                                 |
