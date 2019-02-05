@@ -6,7 +6,7 @@ Bisly
 <br><br>
 </p>
   
-# Some commands are as follows
+<p align="center">Some commands are as follows:</p>
 |Commands          |Usage                                                 |
 |------------------|------------------------------------------------------|
 |ping              |tests the latency of the bot                          |
