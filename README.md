@@ -2,7 +2,8 @@ Bisly
 =====
 # A general purpose discord bot
 <p align="center">
-  ![Discord Bots](https://discordbots.org/api/widget/496198253193461792.svg)<br><br>
+  <img src="https://discordbots.org/api/widget/496198253193461792.svg" alt="Bisly" />
+<br><br>
 </p>
   
 # Some commands are as follows
