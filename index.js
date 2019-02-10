@@ -40,9 +40,10 @@ client.on('guildMemberAdd', member => {
 
 client.on('guildMemberAdd', member => {
     const channel = member.guild.channels.find(ch => ch.name === 'welcome-bye');
+    let memberavatar = member.user.avatarURL
     if (!channel) return;
     let embed = new RichEmbed()
-    .setThumbnail(member.displayAvatarURL)
+    .setThumbnail(memberavatar)
     .setTitle("User Joined")
     .setColor("RANDOM")
     .setDescription(`Welcome to the server, ${member}, hope you enjoy your time here! You are, ${member.guild.memberCount}th member of the guild!`)
@@ -52,16 +53,23 @@ client.on('guildMemberAdd', member => {
 });
 
 client.on('guildMemberRemove', member => {
-	const channel = member.guild.channels.find(ch => ch.name === 'welcome-bye');
-	if (!channel) return;
-	let embed = new RichEmbed()
-	.setThumbnail(member.displayAvatarURL)
-	.setTitle("User Left")
-	.setColor("RANDOM")
-	.setDescription(`${member.username}, ServerCount:, ${member.guild.memberCount}`)
-	.setTimestamp(new Date())
-	.setFooter(member.guild)
-	channel.send(embed)
+    const channel = member.guild.channels.find(ch => ch.name === 'welcome-bye');
+    let memberavatar = member.user.avatarURL
+    if (!channel) return;
+    let embed = new RichEmbed()
+    .setThumbnail(memberavatar)
+    .setTitle("See ya Later")
+    .setColor("RANDOM")
+    .addField(`${member.username} just left the server!`)
+    .addField(`ServerCount:, ${member.guild.memberCount}`)
+    .setTimestamp(new Date())
+    .setFooter(member.guild.name)
+    channel.send(embed)
+});
+
+client.on('guildMemberRemove', member => {
+    console.log(`${member}` + "has left" + `${member.guild.name}` + "Sending leave message now")
+    console.log("Leave message sent")
 });
 
 
