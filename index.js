@@ -54,22 +54,20 @@ client.on('guildMemberAdd', member => {
 
 client.on('guildMemberRemove', member => {
     const channel = member.guild.channels.find(ch => ch.name === 'welcome-bye');
-    let memberavatar = member.user.avatarURL
     if (!channel) return;
     let embed = new RichEmbed()
-    .setThumbnail(memberavatar)
-    .setTitle("See ya Later")
-    .setColor("RANDOM")
-    .addField(`${member.username} just left the server!`)
-    .addField(`ServerCount:, ${member.guild.memberCount}`)
-    .setTimestamp(new Date())
-    .setFooter(member.guild.name)
+      .setThumbnail(client.users.get(member.id).displayAvatarURL)
+      .setTitle("Member Left")
+      .setColor("RANDOM")
+      .setDescription("We are sad to see you leaving, " + member + ", see ya soon!")
+      .addField("Username : ", client.users.get(member.id).username, true)
+      .addField("ID : ", client.users.get(member.id).id, true)
+      .addField("Tag : ", client.users.get(member.id).tag, true)   
+      .addField("Created At : ", client.users.get(member.id).createdAt, true)
+      .addField("Membercount : ", member.guild.memberCount, true)
+      .setTimestamp()
+      .setFooter(member.guild);
     channel.send(embed)
-});
-
-client.on('guildMemberRemove', member => {
-    console.log(`${member}` + "has left" + `${member.guild.name}` + "Sending leave message now")
-    console.log("Leave message sent")
 });
 
 
@@ -168,7 +166,7 @@ client.on("message", (message) => {
     message.channel.send(embed)
   } else
     
-  if (message.content.startsWith(prefix + "userinfo")) {
+  if (message.content.startsWith(prefix + "user")) {
     let member = message.mentions.users.first() || message.author;
     let embed = new RichEmbed()
         .setColor(message.guild.member(member).highestRole.color)
@@ -188,7 +186,7 @@ client.on("message", (message) => {
     message.channel.send(embed);
   } else
 
-  if (message.content.startsWith(prefix + "serverinfo")) {
+  if (message.content.startsWith(prefix + "server")) {
     let embed = new RichEmbed()
         .setColor('RANDOM') // Random color everytime
         .setTitle('Server Info') // Title is clickable
@@ -259,9 +257,10 @@ client.on("message", (message) => {
         .addField("def:", "get definition from urban dictionary")
         .addField("ava:", "get your or someone's avatar/pfp")
         .addField("8ball:", "the great 8ball answers to your questions")
+        .addField("rps:", "play rock-paper-scissors with the bot")
         .addField("info:", "bot info and thank you message")
-        .addField("serverinfo:", "get the guild details")
-        .addField("userinfo:", "get the user details")
+        .addField("server:", "get the guild details")
+        .addField("user:", "get the user details")
         .addField("say:", "tell something that you want the bot to say")
         .addField("help:", "this shows the help box")
         .addField("Welcome-leave-logs:", "add a channel named welcome-bye in the server")
