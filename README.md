@@ -4,7 +4,9 @@ Bisly
 <p align="center">
   <img src="https://discordbots.org/api/widget/496198253193461792.svg" alt="Bisly" />
 <br><br>
-[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
+<p align="center">
+  <img src="https://forthebadge.com/images/badges/made-with-javascript.svg" />
+<br<<br>
   
 # Some commands are as follows:
 |Commands          |Usage                                                 |
