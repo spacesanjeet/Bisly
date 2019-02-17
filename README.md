@@ -3,8 +3,10 @@ Bisly
 # A general purpose discord bot
 <p align="center">
   <img src="https://discordbots.org/api/widget/496198253193461792.svg" alt="Bisly" />
-<br><br>
-</p>
+<br><br></p>
+<p align="center">
+  [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
+<br><br></p>
   
 # Some commands are as follows:
 |Commands          |Usage                                                 |
