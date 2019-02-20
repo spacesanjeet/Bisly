@@ -13,9 +13,9 @@ Bisly
 |------------------|------------------------------------------------------|
 |ping              |tests the latency of the bot                          |
 |help              |to get all available commands                         |
-|userinfo          |info of the pinged user                               |
-|serverinfo        |info of the server                                    |
-|avatar            |avatar of the user                                    |
+|user              |info of the pinged user                               |
+|server            |info of the server                                    |
+|ava               |avatar of the user                                    |
 |8ball             |the great answers from 8ball                          |
 |def               |the urban definitions                                 |
 |say               |make the bot say, what u want                         |
