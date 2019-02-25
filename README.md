@@ -7,7 +7,7 @@ Bisly
 <p align="center">
   <img src="https://forthebadge.com/images/badges/made-with-javascript.svg" />
 <br><br>
-  
+
 # Some commands are as follows:
 |Commands          |Usage                                                 |
 |------------------|------------------------------------------------------|
