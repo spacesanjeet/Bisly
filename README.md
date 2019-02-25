@@ -7,9 +7,6 @@ Bisly
 <p align="center">
   <img src="https://forthebadge.com/images/badges/made-with-javascript.svg" />
 <br><br>
-<p align="center">
-  <iframe src="https://discordapp.com/widget?id=496197306882719755&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
-<br><br>
   
 # Some commands are as follows:
 |Commands          |Usage                                                 |
