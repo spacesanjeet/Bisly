@@ -19,6 +19,8 @@ Bisly
 |8ball             |the great answers from 8ball                          |
 |def               |the urban definitions                                 |
 |say               |make the bot say, what u want                         |
+|rps               |play rock-paper-scissors with the bot                 |
+|report            |report any user                                       |
 |welcome-leave-logs|gives the welcome and the leave messages in the server|
 
 1. General purpose discord bot with great uptime.
