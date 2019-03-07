@@ -70,6 +70,12 @@ client.on('guildMemberRemove', member => {
     channel.send(embed)
 });
 
+client.on('message', message=> {
+    if (message.isMentioned(client.user)) {
+    message.reply("The prefix is `b!` Use `b!help` to see all available commands!");
+}
+});
+
 
 const prefix = "b!";                    //prefix of the bot
 client.on("message", (message) => {
@@ -130,6 +136,36 @@ client.on("message", (message) => {
     .addField("Repository:", "https://github.com/spacesanjeet/Bisly")
     .setFooter("Created by spacesanjeet#1363")
     message.channel.send(embed)
+  } else
+	  
+  if (message.content.startsWith(prefix + "sicon")) {
+    let embed = new RichEmbed()
+    .setImage(message.guild.iconURL)
+    .setFooter(message.guild.name)
+    message.channel.send(embed)
+  } else
+	  
+  if (message.content.startsWith(prefix + "report")) {
+    let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[1]));
+    if(!rUser) return message.channel.send("Can't find the specified user!!");
+    let reason = args.join(" ").slice(22);
+
+    message.channel.send("The report has been sent!!");
+
+    let embed = new RichEmbed()
+    .setTitle("Report")
+    .setColor("RANDOM")
+    .addField("Reported user:", `${rUser} with ID: ${rUser.id}`)
+    .addField("Reported by:", `${message.author} with ID: ${message.author.id}`)
+    .addField("Channel:", `${message.channel}`)
+    .addField("Time:", `${message.createdAt}`)
+    .addField("Reason:", reason);
+
+    let reportsChannel = message.guild.channels.find("name", "reports");
+    if(!reportsChannel) return message.channel.send("Can't find a reports channel!!");
+
+    message.delete().catch(O_o=>{});
+    reportsChannel.send(embed);
   } else
 
   if (message.content.startsWith(prefix + "8ball")) {
