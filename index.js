@@ -276,26 +276,30 @@ client.on("message", (message) => {
     message.guild.member(bUser).ban(bReason);
     message.channel.send(banEmbed);
   } else
-	  
-  }if (message.content.startsWith(prefix + "prune")) {
+	
+  if (message.content.startsWith(prefix + "prune")) {
     let mss=message.content.split(' ');
     if(mss[1]!=null){
-    var num=parseInt(mss[1])+1;
+    var num=parseInt(mss[1]);
         let perms = message.member.permissions;
         let prm = perms.has("MANAGE_MESSAGES");
         if(prm==true){
-        message.channel.bulkDelete(num, true)
-          .then(m=>{
-             message.channel.send(`${m.size} messages are deleted from this channel by **${message.author.username}**`);
-        })
-        .catch(err => {
-             console.error(err);
-             message.channel.send('there was an error while trying to prune messages in this channel!');
-        });
-        }else{
-          message.channel.send(`${message.author} you don\'t have the permission to prune`);
-        } 
-       }
+        if(num>0){
+        message.channel.bulkDelete(num+1, true)
+        .then((m)=>{
+         let k=m.size-1;
+         message.channel.send(`${k} messages are deleted from this channel by **${message.author.username}**`);
+    })
+    .catch(err => {
+        console.error(err);
+        message.channel.send('there was an error while trying to prune messages in this channel!');
+    });
+    }else{
+        message.channel.send('Can\'t delete '+num+' message');
+    }
+    }else{
+      message.channel.send(`${message.author} you don\'t have the permission to prune`);
+    }}
   } else
     
   if (message.content.startsWith(prefix + "invite")) {
