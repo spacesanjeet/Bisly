@@ -238,6 +238,65 @@ client.on("message", (message) => {
         .setFooter('Requested by: ' + message.author.username)
     message.channel.send(embed)
   } else
+	  
+  if (message.content.startsWith(prefix + "kick")) {
+    let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[1]));
+    if(!kUser) return message.channel.send("Can't find the user!");
+    let kReason = args.join(" ").slice(22);
+    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You don't have permissions to use this command!");
+    if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("That person can't be kicked!");
+
+    let kickEmbed = new RichEmbed()
+    .setDescription("Member Kicked")
+    .setColor("RANDOM")
+    .addField("Kicked User:", `${kUser} with ID ${kUser.id}`)
+    .addField("Kicked by:", `<@${message.author.name}> with ID ${message.author.id}`)
+    .addField("Time:", message.createdAt)
+    .addField("Reason:", kReason);
+
+    message.guild.member(kUser).kick(kReason);
+    message.channel.send(kickEmbed);
+  } else
+	  
+  if (message.content.startsWith(prefix + "ban")) {
+    let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[1]));
+    if(!bUser) return message.channel.send("Can't find the user!");
+    let bReason = args.join(" ").slice(22);
+    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You don't have permissions to use this command!");
+    if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("That person can't be kicked!");
+
+    let banEmbed = new RichEmbed()
+    .setDescription("Member Banned")
+    .setColor("RANDOM")
+    .addField("Banned User:", `${bUser} with ID ${bUser.id}`)
+    .addField("Banned by:", `<@${message.author.name}> with ID ${message.author.id}`)
+    .addField("Time:", message.createdAt)
+    .addField("Reason:", bReason);
+
+    message.guild.member(bUser).ban(bReason);
+    message.channel.send(banEmbed);
+  } else
+	  
+  }if (message.content.startsWith(prefix + "prune")) {
+    let mss=message.content.split(' ');
+    if(mss[1]!=null){
+    var num=parseInt(mss[1])+1;
+        let perms = message.member.permissions;
+        let prm = perms.has("MANAGE_MESSAGES");
+        if(prm==true){
+        message.channel.bulkDelete(num, true)
+          .then(m=>{
+             message.channel.send(`${m.size} messages are deleted from this channel by **${message.author.username}**`);
+        })
+        .catch(err => {
+             console.error(err);
+             message.channel.send('there was an error while trying to prune messages in this channel!');
+        });
+        }else{
+          message.channel.send(`${message.author} you don\'t have the permission to prune`);
+        } 
+       }
+  } else
     
   if (message.content.startsWith(prefix + "invite")) {
     let embed = new RichEmbed()
