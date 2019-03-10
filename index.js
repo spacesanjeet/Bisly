@@ -280,7 +280,7 @@ client.on("message", (message) => {
         message.channel.send("You are not my boss!");
     }
   } else
-    
+	
   if (message.content.startsWith(prefix + "help")) {
     let embed = new RichEmbed()
         .setColor('RANDOM') // Random color everytime
@@ -295,17 +295,21 @@ client.on("message", (message) => {
         .addField("8ball:", "the great 8ball answers to your questions")
         .addField("rps:", "play rock-paper-scissors with the bot")
         .addField("info:", "bot info and thank you message")
-        .addField("server:", "get the guild details")
-        .addField("user:", "get the user details")
+        .addField("serverinfo:", "get the guild details")
+        .addField("userinfo:", "get the user details")
         .addField("say:", "tell something that you want the bot to say")
+        .addField("prune:", "prune messages in the channel")
+        .addField("kick:", "kick a user with a reason")
+        .addField("ban:", "ban a user with a reason")
         .addField("help:", "this shows the help box")
+        .addField("report:", "report a user, <user><reason>, make a channel named reports")
         .addField("Welcome-leave-logs:", "add a channel named welcome-bye in the server")
         .setTimestamp(new Date())
         .setFooter('Requested by: ' + message.author.username)
     message.channel.send(embed)
   } else
         
-	if (message.content.startsWith(prefix + "say")) {    //say command
+  if (message.content.startsWith(prefix + "say")) {    //say command
     message.delete()
 		message.channel.send(message.content.substring(6, message.content.length));
 	} 
