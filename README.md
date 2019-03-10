@@ -21,6 +21,10 @@ Bisly
 |say               |make the bot say, what u want                         |
 |rps               |play rock-paper-scissors with the bot                 |
 |report            |report any user                                       |
+|kick              |kick a user with reason                               |
+|ban               |ban a user with reason                                |
+|prune             |prune/delete messages in a channel                    |
+|createchannel     |create a channel/voice/caterory in the server         |
 |welcome-leave-logs|gives the welcome and the leave messages in the server|
 
 1. General purpose discord bot with great uptime.
