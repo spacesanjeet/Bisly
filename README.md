@@ -25,6 +25,7 @@ Bisly
 |ban               |ban a user with reason                                |
 |prune             |prune/delete messages in a channel                    |
 |createchannel     |create a channel/voice/caterory in the server         |
+|deletechannel     |delete a channel in the server                        |
 |welcome-leave-logs|gives the welcome and the leave messages in the server|
 
 1. General purpose discord bot with great uptime.
