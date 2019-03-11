@@ -33,3 +33,8 @@ Bisly
 4. It is a general purpose bot meaning it won't have any leveling and roleplaying commands in it.
 5. This bot will be constantly updated to make it free of all known bugs over time and to keep it constant up. 
 6. This bot doesn't have a website or a webpage, it will be coming soon.
+
+Notes :-
+1) For using the welcome-leave logs, there must be a channel named <code>welcome-bye</code> in the server. If the bots finds that channel, the command starts to work automatically.
+2) For the reports command to work, there must be a channel named <code>reports</code> in the server. Also anyone can use this command. The usage is - <code>b!report <person> <reason></code>.
+3) The createchannel command can make any type of channel, whether it is text or the voice. Also you can use the bot to create channel categories. The usage is - <code>b!createchannel <name of the channel> <type></code>
