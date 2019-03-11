@@ -340,6 +340,33 @@ client.on("message", (message) => {
        message.channel.send(`${message.author} you don\'t have the permission to create channels`);
     }
   } else
+	  
+  if (message.content.startsWith(prefix + "deletechannel")) {
+    let ch,chs='';
+    let mess=message.content.split(' ');
+    if(mss[1]!=null||mss[1]!=undefined){
+    for(var i=0;i<mss[1].length;i++){
+      let k=mss[1].charAt(i);
+     if(k!='<'&&k!='>'&&k!='#')   {chs+=k;}
+    }
+    try{
+        ch=client.channels.get(chs);
+    }catch(err){
+        message.channel.send("Can\'t find the channel");
+    }
+    let perms = message.member.permissions;
+    let prm = perms.has("MANAGE_CHANNELS");
+    if(prm==true){
+    try{
+    ch.delete();
+    message.channel.send(`The channel **#${ch.name}** has been deleted by ${message.author.username}`);
+    }catch(err){
+    message.channel.send('Can\'t delete the channel');
+    }
+    }else{
+    message.channel.send(`${msg.author} you don\'t have the permission to delete channels`);
+    }}
+  } else
  
   if (message.content.startsWith(prefix + "on")) {
     if(message.author.id == ownerId) {
