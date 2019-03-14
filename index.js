@@ -167,19 +167,14 @@ client.on("message", (message) => {
     message.delete().catch(O_o=>{});
     reportsChannel.send(embed);
   } else
-
+	  
   if (message.content.startsWith(prefix + "8ball")) {
-    let question = args.slice(0).join(" ");
-    var sayings = ["Yes!", "Not sure!", "Probably not!", "Maybe!", "wtf you asking!"]
+    if(!args[1]) return message.channel.send("Ask a vaild question!");
+    let question = args.slice(1).join(" ");
+    var sayings = ["It is certain!", "It is decidedly so!", "Without a doubt!", "Yes, definitely!", "You may rely on it!", "As I see it, yes!", "Most Likely!", "Outlook good!", "Yes!", "Signs point to yes!", "Reply hazy try again!", "Ask again later!"]
     var result = Math.floor((Math.random() * sayings.length) + 0);
-    const embed = new RichEmbed()
-    .setColor("RANDOM")
-    .setTitle("Answer is:")
-    .addField(question, sayings[result])
-    .setTimestamp(new Date())
-    .setFooter("Question from: " + message.author.username)
-    message.channel.send({embed: embed})
-  } else 
+    message.channel.send("💬" + sayings[result])
+  } else
     
   if (message.content.startsWith(prefix + "wtf")) {
     let embed = new RichEmbed()
