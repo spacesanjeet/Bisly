@@ -17,7 +17,7 @@ Bisly
 |server            |info of the server                                    |
 |ava               |avatar of the user                                    |
 |8ball             |the great answers from 8ball                          |
-|cat               |get cute kittens in your server                       |
+|joke              |get random jokes                                      |
 |def               |the urban definitions                                 |
 |say               |make the bot say, what u want                         |
 |rps               |play rock-paper-scissors with the bot                 |
