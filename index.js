@@ -175,6 +175,15 @@ client.on("message", (message) => {
     var result = Math.floor((Math.random() * sayings.length) + 0);
     message.channel.send("💬" + sayings[result])
   } else
+	  
+  if (message.content.startsWith(prefix + "joke")) {
+    var jokes = []
+    var result = Math.floor((Math.random() * jokes.length) + 0);
+    const embed = new RichEmbed()
+    .setColor("RANDOM")
+    .setDescription(jokes[result])
+    message.channel.send(embed)
+  } else
     
   if (message.content.startsWith(prefix + "wtf")) {
     let embed = new RichEmbed()
@@ -407,6 +416,7 @@ client.on("message", (message) => {
         .addField("def:", "get definition from urban dictionary")
         .addField("ava:", "get your or someone's avatar/pfp")
         .addField("8ball:", "the great 8ball answers to your questions")
+        .addField("joke:", "get a random joke")
         .addField("rps:", "play rock-paper-scissors with the bot")
         .addField("info:", "bot info and thank you message")
         .addField("serverinfo:", "get the guild details")
