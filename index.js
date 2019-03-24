@@ -15,6 +15,8 @@ setInterval(() => {
 //still under development
 const { Client, RichEmbed } = require('discord.js'); //entering the bot on discord
 const relevantUrban = require("relevant-urban");
+const snekfetch = require('snekfetch');
+const weather = require("weather-js")
 const client = new Client();
 
 client.on('ready', () => {
@@ -183,6 +185,38 @@ client.on("message", (message) => {
     .setColor("RANDOM")
     .setDescription(jokes[result])
     message.channel.send(embed)
+  } else
+	  
+  if (message.content.startsWith(prefix + "weather")) {
+    weather.find({search: args.join(" "), degreeType: 'C'}, function(err, result) {
+        if (err) message.channel.send(err);
+        if (result === undefined || result.length === 0) {
+            message.channel.send('**Please enter a valid location!**')
+            return;
+        }
+        var current = result[0].current;
+        var location = result[0].location;
+        const embed = new RichEmbed()
+            .setDescription(`**${current.skytext}**`)
+            .setAuthor(`Weather for ${current.observationpoint}`)
+            .setThumbnail(current.imageUrl)
+            .setColor(0x00AE86)
+            .addField('Timezone',`UTC ${location.timezone}`, true)
+            .addField('Degree Type',location.degreetype, true)
+            .addField('Temperature',`${current.temperature} Degrees`, true)
+            .addField('Feels Like', `${current.feelslike} Degrees`, true)
+            .addField('Winds',current.winddisplay, true)
+            .addField('Humidity', `${current.humidity}%`, true)
+            message.channel.send({embed});
+    })
+  } else
+	  
+  if (message.content.startsWith(prefix + "WEATHER")) {
+    weather.find({search: args.join(" "), degreeType: 'F'}, function(err, result) {
+        if (err) message.channel.send(err)
+
+        message.channel.send(JSON.stringify(result[0].current, null, 2));
+    });
   } else
     
   if (message.content.startsWith(prefix + "wtf")) {
