@@ -17,6 +17,9 @@ const { Client, RichEmbed } = require('discord.js'); //entering the bot on disco
 const relevantUrban = require("relevant-urban");
 const snekfetch = require('snekfetch');
 const weather = require("weather-js")
+const math = require('math-expression-evaluator');
+const search = require('yt-search');
+const xkcd = require('xkcd-imgs');
 const client = new Client();
 
 client.on('ready', () => {
@@ -218,6 +221,52 @@ client.on("message", (message) => {
         message.channel.send(JSON.stringify(result[0].current, null, 2));
     });
   } else
+	  
+  if (message.content.startsWith(prefix + "math")) {
+    if (!args[1]) return message.channel.send("Enter a valid calculation!")
+    let result;
+    try {
+        result = math.eval(args.slice(1).join(" "))
+    } catch (e) {
+        result = 'Error: "Invalid Input"';
+    }
+
+    let embed = new RichEmbed()
+    .setColor("RANDOM")
+    .setTitle("Maths Calculation")
+    .addField('Input', `\`\`\`js\n${args.slice(1).join(" ")}\`\`\``)
+    .addField('Output', `\`\`\`js\n${result}\`\`\``)
+    .setTimestamp(new Date());
+    message.channel.send(embed)
+  } else
+	  
+  if (message.content.startsWith(prefix + "yt")) {
+    search(args.slice(1).join(' '), function(err, res) {
+        if (err) return message.channel.send('Sorry, something went wrong!');
+        let link = "http://www.youtube.com"
+        let videos = res.videos.slice(0, 1);
+        let resp = '';
+        for (var i in videos) {
+            resp += `${videos[i].url}`;
+        }
+        message.channel.send(link+resp)
+    });
+  } else
+	  
+  if (message.content.startsWith(prefix + "xkcd")) {
+    xkcd.img(function(err, res) {
+        if (err) return message.channel.send('Sorry, something went wrong!')
+        let image = res.url;
+        let des = res.title;
+        let embed = new RichEmbed()
+        .setTitle("xkcd")
+        .setColor("RANDOM")
+        .setImage(image)
+        .setDescription(des)
+        .setTimestamp(new Date())
+        message.channel.send(embed)
+    });
+  } else
     
   if (message.content.startsWith(prefix + "wtf")) {
     let embed = new RichEmbed()
@@ -281,14 +330,13 @@ client.on("message", (message) => {
     let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[1]));
     if(!kUser) return message.channel.send("Can't find the user!");
     let kReason = args.join(" ").slice(22);
-    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You don't have permissions to use this command!");
-    if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("That person can't be kicked!");
+    if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send("You don't have permissions to use this command!");
 
     let kickEmbed = new RichEmbed()
     .setDescription("Member Kicked")
     .setColor("RANDOM")
     .addField("Kicked User:", `${kUser} with ID ${kUser.id}`)
-    .addField("Kicked by:", `<@${message.author.name}> with ID ${message.author.id}`)
+    .addField("Kicked by:", `<@${message.author}> with ID ${message.author.id}`)
     .addField("Time:", message.createdAt)
     .addField("Reason:", kReason);
 
@@ -300,14 +348,13 @@ client.on("message", (message) => {
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[1]));
     if(!bUser) return message.channel.send("Can't find the user!");
     let bReason = args.join(" ").slice(22);
-    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You don't have permissions to use this command!");
-    if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("That person can't be kicked!");
+    if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send("You don't have permissions to use this command!");
 
     let banEmbed = new RichEmbed()
     .setDescription("Member Banned")
     .setColor("RANDOM")
     .addField("Banned User:", `${bUser} with ID ${bUser.id}`)
-    .addField("Banned by:", `<@${message.author.name}> with ID ${message.author.id}`)
+    .addField("Banned by:", `<@${message.author}> with ID ${message.author.id}`)
     .addField("Time:", message.createdAt)
     .addField("Reason:", bReason);
 
@@ -440,30 +487,16 @@ client.on("message", (message) => {
 	
   if (message.content.startsWith(prefix + "help")) {
     let embed = new RichEmbed()
-        .setColor('RANDOM') // Random color everytime
-        .setTitle('HELP BOX') // Title is clickable
-        .setThumbnail(client.user.avatarURL)
-        .setDescription("Prefix => b!")
-        .addField("ping:", "pong! speed matters!")
-        .addField("wtf:", "critisize the HTML language!")
-        .addField("invite:", "invite for the bot")
-        .addField("def:", "get definition from urban dictionary")
-        .addField("ava:", "get your or someone's avatar/pfp")
-        .addField("8ball:", "the great 8ball answers to your questions")
-        .addField("joke:", "get a random joke")
-        .addField("rps:", "play rock-paper-scissors with the bot")
-        .addField("info:", "bot info and thank you message")
-        .addField("serverinfo:", "get the guild details")
-        .addField("userinfo:", "get the user details")
-        .addField("say:", "tell something that you want the bot to say")
-        .addField("prune:", "prune messages in the channel")
-        .addField("kick:", "kick a user with a reason")
-        .addField("ban:", "ban a user with a reason")
-        .addField("help:", "this shows the help box")
-        .addField("report:", "report a user, <user><reason>, make a channel named reports")
-        .addField("Welcome-leave-logs:", "add a channel named welcome-bye in the server")
-        .setTimestamp(new Date())
-        .setFooter('Requested by: ' + message.author.username)
+    .setColor('#F70827')
+    .setTitle('HELP BOX')
+    .setThumbnail(client.user.avatarURL)
+    .addField("Prefix:", "b!")
+    .addField("General", `**server: **Get the serverinfo\n**user: **Get the userinfo\n**ava: **Get the avatar of the users\n**report: **Report a user with reason\n**welcome-leave-logs: **Make a channel names 'welcome-bye' to enable`)
+    .addField("Fun", `**rps: **Play rock-paper-scissors with the bot\n**joke: **Get a random joke\n**xkcd: **Get xkcd web comics\n**8ball: **Get the funny 8ball answers\n**say: **Make the bot something\n**wtf: **Criticize the HTML language`)
+    .addField("Moderation", `**ban: **Ban a user with reason\n**kick: **Kick a user with reason\n**createchannel: **Create a channel, <type><channelname>\n**deletechannel: **Delete a channel, <channel/id>\n**prune: **Prune the messages`)
+    .addField("Misc", `**ping: **Test the latency of the bot\n**math: **Do calculations\n**weather: **Check weather of a place\n**def: **Definitions from urban\n**yt: **Get the youtube videos\n**invite: **Get the bot invite link\n**info: **Bot info\n**bot: **Bot stats\n**help: **help relating commands`)
+    .setFooter(`Requested by: ${message.author.username}#${message.author.discriminator}`, message.author.displayAvatarURL)
+    .setTimestamp(new Date())
     message.channel.send(embed)
   } else
         
