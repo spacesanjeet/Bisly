@@ -29,6 +29,9 @@
     "express": "^4.16.4",
     "relevant-urban": "^2.0.0",
     "snekfetch": "^4.0.4",
-    "weather-js": "^2.0.0"
+    "weather-js": "^2.0.0",
+    "math-expression-evaluator": "^1.2.17",
+    "yt-search": "^0.4.1",
+    "xkcd-imgs": "^1.0.1"
   }
 }
