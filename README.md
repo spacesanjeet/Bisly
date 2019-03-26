@@ -18,6 +18,10 @@ Bisly
 |ava               |avatar of the user                                    |
 |8ball             |the great answers from 8ball                          |
 |joke              |get random jokes                                      |
+|yt                |get youtube videos                                    |
+|maths             |make calculations                                     |
+|xkcd              |get xkcd web comics                                   |
+|weather           |get weather of a place                                |
 |def               |the urban definitions                                 |
 |say               |make the bot say, what u want                         |
 |rps               |play rock-paper-scissors with the bot                 |
