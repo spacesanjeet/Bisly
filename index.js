@@ -320,7 +320,6 @@ client.on("message", (message) => {
         .addField("JoinedAt:", message.guild.members.get(member.id).joinedAt)
         .addField("Bot:", member.bot ? "Yes" : "No", true)
         .addField("Game:", message.guild.member(member).presence.game ? message.guild.member(member).presence.game.name : "Not Playing", true) // the ? and : are like an if statement if (msg.guild.member(member).presence.game ) { msg.guild.member(member).presence.game.name } else "Not Playing"
-        .addField("Last Messsage:", member.lastMessage ?  member.lastMessage: "No message", true)
         .addField(`Roles:`, message.guild.member(member).roles.map(s => s.name).slice(1).join(" | "), true)
         .setTimestamp(new Date())
         .setFooter(message.guild.name)
