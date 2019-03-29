@@ -511,7 +511,7 @@ client.on("message", (message) => {
     .addField("Prefix:", "b!")
     .addField("General", `**server: **Get the serverinfo\n**user: **Get the userinfo\n**ava: **Get the avatar of the users\n**report: **Report a user with reason\n**welcome-leave-logs: **Make a channel names 'welcome-bye' to enable`)
     .addField("Fun", `**rps: **Play rock-paper-scissors with the bot\n**joke: **Get a random joke\n**xkcd: **Get xkcd web comics\n**norris: **Get Chuck Norris jokes\n**8ball: **Get the funny 8ball answers\n**say: **Make the bot something\n**wtf: **Criticize the HTML language`)
-    .addField("Moderation", `**ban: **Ban a user with reason\n**kick: **Kick a user with reason\n**createchannel: **Create a channel, <type><channelname>\n**deletechannel: **Delete a channel, <channel/id>\n**prune: **Prune the messages`)
+    .addField("Moderation", `**ban: **Ban a user with reason\n**kick: **Kick a user with reason\n**createchannel: **Create a channel, <channel name><type>\n**deletechannel: **Delete a channel, <channel/id>\n**prune: **Prune the messages`)
     .addField("Misc", `**ping: **Test the latency of the bot\n**math: **Do calculations\n**weather: **Check weather of a place\n**def: **Definitions from urban\n**yt: **Get the youtube videos\n**invite: **Get the bot invite link\n**info: **Bot info\n**bot: **Bot stats\n**help: **help relating commands`)
     .setFooter(`Requested by: ${message.author.username}#${message.author.discriminator}`, message.author.displayAvatarURL)
     .setTimestamp(new Date())
