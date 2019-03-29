@@ -138,8 +138,9 @@ client.on("message", (message) => {
     .addField("CreatedOn:", client.user.createdAt)
     .addField("Guilds:", client.guilds.size)
     .addField("Users:", client.users.size)
-    .addField("Total commands:", "11")
-    .addField("Repository:", "https://github.com/spacesanjeet/Bisly")
+    .addField("Total commands:", "25")
+    .addField("Website:", "http://bisly.ml/", true)
+    .addField('Repository:', '[Bisly on Github](https://github.com/spacesanjeet/Bisly)')
     .setFooter("Created by spacesanjeet#1363")
     message.channel.send(embed)
   } else
