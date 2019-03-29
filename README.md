@@ -21,6 +21,7 @@ Bisly
 |yt                |get youtube videos                                    |
 |maths             |make calculations                                     |
 |xkcd              |get xkcd web comics                                   |
+|norris            |get the chuck norris jokes
 |weather           |get weather of a place                                |
 |def               |the urban definitions                                 |
 |say               |make the bot say, what u want                         |
