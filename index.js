@@ -147,7 +147,7 @@ client.on("message", (message) => {
 	  
   if (message.content.startsWith(prefix + "sicon")) {
     let embed = new RichEmbed()
-    .setImage(message.guild.iconURL)
+    .setImage(message.guild.iconURL +'?size=2048')
     .setFooter(message.guild.name)
     message.channel.send(embed)
   } else
