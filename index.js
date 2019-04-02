@@ -128,6 +128,10 @@ client.on("message", (message) => {
         .addField('Rating', `**\`Upvotes: ${response.thumbsUp} | Downvotes: ${response.thumbsDown}\`**`)
         message.channel.send(embed)
     })
+    .catch(error => {
+	    message.channel.send("Couldn't find any results!")
+	    console.log(error)
+    });
   } else
     
   if (message.content.startsWith(prefix + "bot")) {
