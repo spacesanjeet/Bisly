@@ -1,7 +1,7 @@
 Bisly
 =====
-<p> Bisly 2.0 coming up in a few days.</p><br>
 # A general purpose discord bot
+<p> Bisly 2.0 coming up in a few days.</p><br>
 <p align="center">
   <img src="https://discordbots.org/api/widget/496198253193461792.svg" alt="Bisly" />
 <br><br>
