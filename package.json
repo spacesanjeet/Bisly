@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/spacesanjeet/Bisly",
   "dependencies": {
-    "discord.js": "^11.4.2",
+    "discord.js": "^11.5.0",
     "mal-scraper": "^2.4.5",
     "firebase": "^5.8.2",
     "profanity-util": "0.2.0",
