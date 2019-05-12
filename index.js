@@ -178,7 +178,7 @@ client.on("message", (message) => {
     let embed = new RichEmbed()
     .setColor("RANDOM")
     .setTitle("Stats")
-    .addField("Bisly", `**CreatedAt: **${client.user.createdAt}\n**Guilds: **${client.guilds.size}\n**Channels: **${client.channels.size}\n**Users: **${client.users.size}\n**Discord.js: **v11.4.2\n**Node.js: **${process.version}`)
+    .addField("Bisly", `**CreatedAt: **${client.user.createdAt}\n**Guilds: **${client.guilds.size}\n**Channels: **${client.channels.size}\n**Users: **${client.users.size}\n**Discord.js: **v11.5.0\n**Node.js: **${process.version}`)
     .addField("Uptime", `**Client: **${client_uptime}\n**Host OS: **${os_uptime}\n**Process: **${process_uptime}`)
     .addField("Ram", `**Total: **${ram_total}\n**Usage: **${ram_usage}`)
     message.channel.send(embed)
