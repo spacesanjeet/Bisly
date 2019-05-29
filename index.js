@@ -215,7 +215,8 @@ client.on("message", (message) => {
   } else
 	  
   if (message.content.startsWith(prefix + "8ball")) {
-    if(!args[1]) return message.channel.send("Ask a vaild question!");
+    if(!args.join(" ").endsWith("?")) return message.channel.send("Ask a valid question!");
+    //if(!args[1]) return message.channel.send("Ask a vaild question!");
     let question = args.slice(1).join(" ");
     var sayings = ["It is certain!", "It is decidedly so!", "Without a doubt!", "Yes, definitely!", "You may rely on it!", "As I see it, yes!", "Most Likely!", "Outlook good!", "Yes!", "Signs point to yes!", "Reply hazy try again!", "Ask again later!"]
     var result = Math.floor((Math.random() * sayings.length) + 0);
