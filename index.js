@@ -136,7 +136,7 @@ client.on("message", (message) => {
     .setColor('#F70827')
     .setDescription(`Bisly is a general purpose discord bot which is developed with the view of performing all general tasks in mind.\n
     The bot contains commands for **Fun**, **Moderation**, **Misc** and **General** tasks.`)
-    .addField("Webpage:", "http://bisly.ml/")
+    .addField("Webpage:", "https://bisly.glitch.me")
     .addField("Github repository:", "[Bisly on Github](https://github.com/spacesanjeet/Bisly)")
     .setFooter("spacesanjeet#1363")
     message.channel.send(embed)
