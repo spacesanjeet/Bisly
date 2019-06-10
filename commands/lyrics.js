@@ -7,6 +7,7 @@ module.exports = {
     description: 'get lyrics',
     execute(client, message, args) {
         let lyrics = args.join(" ")
+        if(!lyrics) return message.channel.send("You didn't provide the name of the song!");
         const url = 'https://some-random-api.ml/lyrics';
         const lyric = `${url}?title=${lyrics.split(/ +/g).join('_')}`;
 
