@@ -11,7 +11,7 @@ Bisly v2.0
 <p>Bisly is a general purpose discord bot with commands ranging from general to moderation, and from fun to some cute animal commands. With over 30 commands, you won't regret using Bisly.<br>
 This new update comes with tons of bug fixes and with a bunch of new commands. Use feedback command <code>b!feedback [your feedback]</code> to inform about bugs and to give suggestions.</p>
 
-<p>You can get detailed list of commands using the help command <code>b!help</code> while you can also visit the official web page of Bisly at, https://bisly.glitch.com to view detailed list of all commands.</p>
+<p>You can get detailed list of commands using the help command <code>b!help</code> while you can also visit the official web page of Bisly at, https://bisly.glitch.me to view detailed list of all commands.</p>
 
 Notes :-
 >1) For using the welcome-leave logs, there must be a channel named <code>welcome-bye</code> in the server. If the bots finds that channel, the command starts to work automatically.
