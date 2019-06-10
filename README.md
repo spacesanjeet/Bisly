@@ -1,6 +1,6 @@
 Bisly v2.0
 =====
-# A general purpose discord bot
+### A general purpose discord bot
 <p align="center">
   <img src="https://discordbots.org/api/widget/496198253193461792.svg" alt="Bisly" />
 <br><br>
@@ -8,9 +8,10 @@ Bisly v2.0
   <img src="https://forthebadge.com/images/badges/made-with-javascript.svg" />
 <br><br>
 
-<p>You can get detailed list of commands using the help command <code>b!help</code> while you can also visit the official web page of Bisly at, https://bisly.glitch.com to view detailed list of all commands.</p>
+<p>Bisly is a general purpose discord bot with commands ranging from general to moderation, and from fun to some cute animal commands. With over 30 commands, you won't regret using Bisly.<br>
+This new update comes with tons of bug fixes and with a bunch of new commands. Use feedback command <code>b!feedback [your feedback]</code> to inform about bugs and to give suggestions.</p>
 
-<p>Bisly is a general purpose discord bot with commands ranging from general to moderation, and from fun to some cute animal commands. With over 30 commands, you won't regret using Bisly.</p>
+<p>You can get detailed list of commands using the help command <code>b!help</code> while you can also visit the official web page of Bisly at, https://bisly.glitch.com to view detailed list of all commands.</p>
 
 Notes :-
 >1) For using the welcome-leave logs, there must be a channel named <code>welcome-bye</code> in the server. If the bots finds that channel, the command starts to work automatically.
@@ -20,4 +21,3 @@ Notes :-
 >5) For the ban and kick commands, you must provide a reason to make it work. Also note the <code>that report can be used by anyone in the server.</code>
 
 <p>Feel free to contact give feedbacks and suggestion for Bisly. They are always appreciated. Thank you. ^_^.
-  
