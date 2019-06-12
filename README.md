@@ -19,5 +19,6 @@ Notes :-
 >3) The createchannel command can make any type of channel, whether it is text or the voice. Also you can use the bot to create channel categories. The usage is - <code>b!createchannel [name of the channel] [type]</code>.
 >4) The deletechannel command can delete any channel in the server. The usage is - <code>b!deletechannel [name/id]</code>. Also in the command, you will have to mention the channel name, instead of just writing out the name of the channel. Also you can use the <code>id</code> of the channel, in place of the name of the channel.
 >5) For the ban and kick commands, you must provide a reason to make it work. Also note the <code>that report can be used by anyone in the server.</code>
+>6) For the bulkyt and the yt (both are youtube commands) you should provide enough arguments to get accurate results.
 
 <p>Feel free to contact give feedbacks and suggestion for Bisly. They are always appreciated. Thank you. ^_^.
