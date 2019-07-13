@@ -1,9 +1,9 @@
 const { RichEmbed } = require('discord.js');
 
 module.exports = {
-	name: 'vote',
-	description: 'Vote the bot.',
-  execute(client, message, args) {
+    name: 'vote',
+    description: 'Vote the bot.',
+    execute(client, message, args) {
     	let embed = new RichEmbed()
     	.setTitle("Vote the bot here")
     	.setColor('#F70827')
