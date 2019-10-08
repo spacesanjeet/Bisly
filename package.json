@@ -5,9 +5,9 @@
   "name": "Bisly",
   "version": "2.0.2",
   "description": "A simple Node app built on Express, instantly up and running.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "express": "^4.16.4",
@@ -28,11 +28,11 @@
     "os": "^0.1.1",
     "figlet": "^1.2.4",
     "request": "^2.88.0",
-    "node": "^12.11.0",
+    "node": "^12.11.1",
     "frinkiac-gif-generator": "^0.5.0"
   },
   "engines": {
-    "node": "8.x"
+    "node": "^12.x"
   },
   "repository": {
     "url": "https://glitch.com/edit/#!/hello-express"
