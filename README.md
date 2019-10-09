@@ -21,4 +21,4 @@ Notes :-
 >5) For the ban and kick commands, you must provide a reason to make it work. Also note the <code>that report can be used by anyone in the server.</code>
 >6) For the bulkyt and the yt (both are youtube commands) you should provide enough arguments to get accurate results.
 
-<p>Feel free to contact give feedbacks and suggestion for Bisly. They are always appreciated. Thank you. ^_^.
+<p>Feel free to contact, give feedbacks and suggestion for Bisly. They are always appreciated. Thank you. ^_^.
