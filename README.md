@@ -1,4 +1,4 @@
-Bisly v2.0.2
+Bisly v2.0.3
 =====
 ### A general purpose discord bot
 <p align="center">
