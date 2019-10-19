@@ -9,7 +9,7 @@ module.exports = {
     	.setColor('#F70827')
     	.setDescription(`Bisly is a general purpose discord bot which is developed with the view of performing all general tasks in mind.\n
     	The bot contains commands for **Fun**, **Moderation**, **Misc** and **General** tasks.\n
-        In this update, we have fixed a bug in spam command, which caused it to break and does not work. Now it can spam in a certain channel, which has been named 'spam' or contains the same word.`)
+        In this update, we have added a thumbnail to the Lyrics command, now it can show thumbnails to what lyrics you have searched for.`)
     	.addField("Webpage:", "https://bisly.glitch.me")
     	.addField("Github repository:", "[Bisly on Github](https://github.com/spacesanjeet/Bisly)")
     	.setFooter("spacesanjeet#1363")
