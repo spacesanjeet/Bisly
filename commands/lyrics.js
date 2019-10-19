@@ -15,6 +15,7 @@ module.exports = {
         if (typeof body.author == 'undefined') return message.channel.send("Can't find lyrics for the song!")
       
         let author = body.author;
+        let image = body.thumbnail.genius;
         let title = body.title;
         let lyr = `__${author} - **${title}**__\n\n${body.lyrics}`;
       
@@ -28,6 +29,7 @@ module.exports = {
         //ar.push(x);
         let embed = new RichEmbed()
         .setColor('#7289da')
+        .setThumbnail(image)
         .setDescription(x)
         .setTimestamp(new Date())
         .setFooter(`Requested by ${message.author.username}`, message.author.displayAvatarURL)
