@@ -59,7 +59,7 @@ client.on('guildMemberRemove', member => {
       .setThumbnail(client.users.get(member.id).displayAvatarURL)
       .setTitle("Member Left")
       .setColor("RANDOM")
-      .setDescription("We are sad to see you leaving, " + member + ", see ya soon!")
+      .setDescription(`We are sad to see you leaving, ${member}, see ya soon!`)
       .addField("Username : ", client.users.get(member.id).username, true)
       .addField("ID : ", client.users.get(member.id).id, true)
       .addField("Tag : ", client.users.get(member.id).tag, true)   
