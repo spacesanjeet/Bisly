@@ -5,11 +5,11 @@ module.exports = {
     description: 'get info about the bot',
     execute(client, message, args) {
     	let embed = new RichEmbed()
-    	.setTitle("Bisly v2.0.5")
+    	.setTitle("Bisly v2.0.6")
     	.setColor('#F70827')
     	.setDescription(`Bisly is a general purpose discord bot which is developed with the view of performing all general tasks in mind.\n
     	The bot contains commands for **Fun**, **Moderation**, **Misc** and **General** tasks.\n
-        In this small new update, we have fixed several issues in the 'ascii' command to make it more effective.`)
+        In this update, 'ban' and 'kick' commands have been updated, bugs have been fixed and the code is made more efficient.`)
     	.addField("Webpage:", "https://bisly.glitch.me")
     	.addField("Github repository:", "[Bisly on Github](https://github.com/spacesanjeet/Bisly)")
     	.setFooter("spacesanjeet#1363")
