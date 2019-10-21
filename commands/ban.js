@@ -3,22 +3,15 @@ const { RichEmbed } = require('discord.js');
 module.exports = {
     name: 'ban',
     description: 'ban a user with reason',
-    execute(client, message, args) {
-        let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-        if(!bUser) return message.channel.send("Can't find the user!");
-        let join = args.join(" ")
-        let bReason = join.split(bUser).join(" ")
+    async execute(client, message, args) {
         if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send("You don't have permissions to use this command!");
-    
-        let banEmbed = new RichEmbed()
-        .setDescription("Member Banned")
-        .setColor("RANDOM")
-        .addField("Banned User:", `${bUser} with ID ${bUser.id}`)
-        .addField("Banned by:", `${message.author} with ID ${message.author.id}`)
-        .addField("Time:", message.createdAt)
-        .addField("Reason:", bReason);
-        //bUser.ban(bReason)
-        message.guild.member(bUser.id).ban(bReason);
-        message.channel.send(banEmbed);
+        let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+        if(!bUser) return message.channel.send("Can't find that user!");
+        if(!bUser.bannable) return message.channel.send("I cannot ban this user! Do they have a higher role? Do I have ban permissions?");
+        let bReason = args.slice(1).join(' ');
+        if(!bReason) bReason = "No reason provided";
+        await bUser.ban(bReason)
+            .catch(error => message.reply(`Sorry ${message.author} I couldn't ban because of : ${error}`));
+        message.channel.send(`**${bUser.user.tag}** has been banned by **${message.author.tag}** because of **${bReason}**`);
     },
 };
