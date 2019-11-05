@@ -1,11 +1,12 @@
 const { RichEmbed } = require('discord.js');
 
 module.exports = {
-  name: 'user',
-  description: 'Shows userinfo',
-  execute(client, message, args) {
+	name: 'user',
+	description: 'Shows userinfo',
+	execute(client, message, args) {
         let member = message.mentions.users.first() || message.author;
         let id = client.users.get(member.id).id;
+        let Roles = message.guild.members.get(id).roles.map(r => `<@&${r.id}>`).slice(1).join(", ");
         let embed = new RichEmbed()
         .setColor(message.guild.member(member).highestRole.color)
         .setThumbnail(member.displayAvatarURL)
@@ -17,7 +18,7 @@ module.exports = {
         .addField("JoinedAt:", message.guild.members.get(member.id).joinedAt)
         .addField(`Bot:`, member.bot ? "Yes" : "No", true)
         .addField("Game:", message.guild.member(member).presence.game ? message.guild.member(member).presence.game.name : "Not Playing", true) // the ? and : are like an if statement if (message.guild.member(member).presence.game ) { message.guild.member(member).presence.game.name } else "Not Playing"
-        .addField("Roles : ", message.guild.members.get(id).roles.map(r => `<@&${r.id}>`).slice(1).join(", "))
+        .addField("Roles : ", `${Roles ? Roles : "No Roles"}`)
         .setTimestamp(new Date())
         .setFooter(message.guild.name)
         message.channel.send(embed);
