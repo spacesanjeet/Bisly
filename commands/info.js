@@ -9,7 +9,7 @@ module.exports = {
     	.setColor('#F70827')
     	.setDescription(`Bisly is a general purpose discord bot which is developed with the view of performing all general tasks in mind.\n
     		The bot contains commands for **Fun**, **Moderation**, **Misc** and **General** tasks.\n
-        In this update, we have added a new command, named cinvite, which can be used to create temporary server invites.`)
+        In this update, we have fixed the spam command, it now tells you that it has initiated the spam.`)
     	.addField("Webpage:", "https://bisly.glitch.me")
     	.addField("Github repository:", "[Bisly on Github](https://github.com/spacesanjeet/Bisly)")
     	.setFooter("spacesanjeet#1363")
