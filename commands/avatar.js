@@ -2,7 +2,7 @@ const { RichEmbed } = require('discord.js');
 
 module.exports = {
   name: 'avatar',
-  description: 'Get your avatar or someone else',
+  description: "Get your avatar or someone else's",
   guildOnly: true,
   aliases: ['ava', 'a'],
   usage: '[mention/id]',
