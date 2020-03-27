@@ -2,7 +2,7 @@ const { RichEmbed } = require('discord.js');
 
 module.exports = {
 	name: 'sicon',
-	description: 'Get the guild/server icon',
+	description: 'Get the server/guild icon',
   guildOnly: true,
 	aliases: ['servericon', 'icon'],
   usage: '[command]',
