@@ -3,7 +3,7 @@ const animals = require('relevant-animals')
 
 module.exports = {
     name: 'dog',
-    description: 'Get random puppy images',
+    description: 'Get random dog images',
     guildOnly: true,
     usage: '[command]',
     cooldown: 5,
