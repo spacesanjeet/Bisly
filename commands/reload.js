@@ -1,8 +1,10 @@
 module.exports = {
     name: 'reload',
-    description: 'reloads the command files',
+    description: 'Reloads the command files',
+    guildOnly: true,
+    usage: '[commandName]',
     execute(client, message, args) {
-        if(message.author.id != process.env.OwnerId) return; 
+        if(message.author.id != process.env.OwnerId) return message.channel.send('Owner only command!');
         if(!args || args.size < 1) return message.reply("Must provide a command name to reload.");
         const commandName = args[0];
         // Check if the command exists and is valid
