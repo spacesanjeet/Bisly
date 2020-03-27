@@ -15,7 +15,7 @@ This new update comes with a new polished code, improved performance and more re
 
 Notes :-
 >1) For using the welcome-leave logs, there must be a channel named <code>welcome-bye</code> in the server. If the bots finds that channel, the command starts to work automatically.
->2) Logs on Bisly can used by having a channel named <code>logs</code> in the server. Logs work for deleted messages.
+>2) Logs on Bisly can be used by having a channel named <code>logs</code> in the server. Logs work for deleted messages.
 >3) For the reports command to work, there must be a channel named <code>reports</code> in the server. <b>Note:</b> Anyone can use this command. The usage is - <code>b!report [person] [reason]</code>.
 >4) The createchannel command can make any type of channel, whether it is text or the voice. Also you can use the bot to create channel categories. The usage is - <code>b!createchannel [name of the channel] [type]</code>.
 >5) The deletechannel command can delete any channel in the server. The usage is - <code>b!deletechannel [name/id]</code>. Also in the command, you will have to mention the channel name, instead of just writing out the name of the channel. Also you can use the <code>id</code> of the channel, in place of the name of the channel.
