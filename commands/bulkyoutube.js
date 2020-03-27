@@ -22,7 +22,6 @@ module.exports = {
             .setColor("RANDOM")
             .setDescription(resp.join("\n"))
             message.channel.send(embed)
-            //message.channel.send(resp.join("\n"))
         });
     },
 };
