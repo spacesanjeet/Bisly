@@ -2,10 +2,14 @@ const { RichEmbed } = require('discord.js');
 const search = require('yt-search');
 
 module.exports = {
-    name: 'bulkyt',
-    description: 'search youtube',
-    execute(client, message, args) {
-        search(args.join("_"), function(err, res) {
+	name: 'bulkyt',
+	description: 'Search bulk youtube links',
+  	guildOnly: true,
+	aliases: ['byt', 'bulkyoutube'],
+	usage: '[string/video/query] (provide enough arguments)',
+  	cooldown: 2,
+  	execute(client, message, args) {
+    	search(args.join("_"), function(err, res) {
             if (err) return message.channel.send('Sorry, something went wrong!');
             let link = "http://www.youtube.com"
             let videos = res.videos.slice(0, 10);
