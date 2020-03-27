@@ -7,7 +7,7 @@ module.exports = {
   description: 'Get basic info about Movies and shows',
   guildOnly: true,
   aliases: ['movie'],
-  usage: 'string',
+  usage: '[string]',
   cooldown: 3,
   execute(client, message, args) {
     let movie = args.join(' ')
