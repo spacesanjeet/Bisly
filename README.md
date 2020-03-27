@@ -25,6 +25,6 @@ Notes :-
 >9) Visit https://bisly.glitch.me/ to get list of all the available commands on Bisly.
 
 <p>We are able to develop Bisly due to constant support from many other developers and the discord community.</p>
-<p>Hounarable mention to my brother and himself a discord.js developer <code>Amethyst</code>. Check him out here, https://github.com/AmethystAnimion</p>
+<p>Honorable mention to my brother and himself a discord.js developer <code>Amethyst</code>. Check him out here, https://github.com/AmethystAnimion</p>
 <p>Feel free to contact give feedbacks and suggestion for Bisly. They are always appreciated. Thank you. ^_^.</p>
 
