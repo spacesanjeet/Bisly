@@ -2,7 +2,10 @@ const { RichEmbed } = require('discord.js');
 
 module.exports = {
     name: 'kick',
-    description: 'kick a user with reason',
+    description: 'Kick a user with reason',
+    guildOnly: true,
+    usage: '[mention reason(optional)]',
+    cooldown: 5,
     async execute(client, message, args) {
         if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send("You don't have permissions to use this command!");
         let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));

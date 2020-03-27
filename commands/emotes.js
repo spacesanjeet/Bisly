@@ -2,7 +2,10 @@ const { RichEmbed } = require('discord.js');
 
 module.exports = {
     name: 'emotes',
-    description: 'get server emojis',
+    description: 'Get all server emojis',
+    guildOnly: true,
+    usage: '[command]',
+    cooldown: 3,
     execute(client, message, args) {
         const emojiList = message.guild.emojis.map(e=>e.toString()).join(" ");
         let embed = new RichEmbed()

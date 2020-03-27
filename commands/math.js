@@ -3,7 +3,10 @@ const math = require('math-expression-evaluator');
 
 module.exports = {
     name: 'math',
-    description: 'do calculations',
+    description: 'Do calculations',
+    guildOnly: true,
+    usage: '[calculation]',
+    cooldown: 3,
     execute(client, message, args) {
         if (!args[0]) return message.channel.send("Enter a valid calculation!")
         let result;
@@ -12,7 +15,7 @@ module.exports = {
         } catch (e) {
             result = 'Error: "Invalid Input"';
         }
-    
+
         let embed = new RichEmbed()
         .setColor("RANDOM")
         .setTitle("Maths Calculation")
@@ -22,3 +25,4 @@ module.exports = {
         message.channel.send(embed)
     },
 };
+

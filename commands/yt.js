@@ -3,7 +3,11 @@ const search = require('yt-search');
 
 module.exports = {
     name: 'yt',
-    description: 'search youtube',
+    description: 'Search youtube',
+    guildOnly: true,
+    aliases: ['youtube'],
+    usage: '[string/video/query] (provide sufficient arguments)',
+    cooldown: 2,
     execute(client, message, args) {
         search(args.slice(0).join(' '), function(err, res) {
             if (err) return message.channel.send('Sorry, something went wrong!');

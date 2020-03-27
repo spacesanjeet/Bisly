@@ -3,7 +3,10 @@ const request = require('request');
 
 module.exports = {
     name: 'meme',
-    description: 'get a random meme',
+    description: 'Get random memes',
+    guildOnly: true,
+    usage: '[command]',
+    cooldown: 5,
     execute(client, message, args) {
         const link = "https://some-random-api.ml/meme";
         request({url: link, json: true}, (err, res, body) => {

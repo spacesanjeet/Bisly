@@ -5,7 +5,10 @@ const fs = require('fs');
 
 module.exports = {
     name: 'emoji',
-    description: 'displays the emoji info',
+    description: 'Get the big emoji',
+    guildOnly: true,
+    usage: '[emoji]',
+    cooldown: 3,
     async execute(client, message, args) {
       if(!args) return message.channel.send("Provide a emoji!");
         try {

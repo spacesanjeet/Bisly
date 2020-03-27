@@ -3,7 +3,10 @@ const xkcd = require('xkcd-imgs');
 
 module.exports = {
     name: 'xkcd',
-    description: 'get xkcd web comics',
+    description: 'Get xkcd web comics',
+    guildOnly: true,
+    usage: '[command]',
+    cooldown: 3,
     execute(client, message, args) {
         xkcd.img(function(err, res) {
             if (err) return message.channel.send('Sorry, something went wrong!')

@@ -1,6 +1,10 @@
 module.exports = {
     name: 'prune',
-    description: 'prune messages',
+    description: 'Prune desired no. of messages',
+    guildOnly: true,
+    aliases: ['purge'],
+    usage: '[no of messages to be deleted, max 99]',
+    cooldown: 5,
     execute(client, message, args) {
         let mss=message.content.split(' ');
         if(mss[0]!=null){

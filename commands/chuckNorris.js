@@ -1,20 +1,23 @@
 const { RichEmbed } = require('discord.js');
-const animals = require('relevant-animals')
+const joke = require('chuck-joke-node');
 
 module.exports = {
-    name: 'shibe',
-    description: 'Get random shibes',
+    name: 'norris',
+    description: 'Get chuck norris jokes',
     guildOnly: true,
+    aliases: ['chuck'],
     usage: '[command]',
-    cooldown: 5,
+    cooldown: 3,
     execute(client, message, args) {
-        animals.shibe().then((s => {
+        joke.random().then((data) => {
             let embed = new RichEmbed()
             .setColor("RANDOM")
-            .setImage(s)
-            .setTimestamp(new Date())
+            .setTitle("Chuck Norris")
+            .setURL(data.url)
+            .setThumbnail(data.icon_url)
+            .setDescription(data.value);
             message.channel.send(embed)
-        }))
+        })
         .catch(error => {
             message.channel.send("Sorry, something went wrong!");
             console.log(error)

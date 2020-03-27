@@ -1,7 +1,11 @@
 module.exports = {
-    name: '8ball',
-    description: 'get 8ball answers',
-    execute(client, message, args) {
+	name: '8ball',
+	description: 'Ask Bisly your questions and get quick responses',
+  guildOnly: true,
+	aliases: ['8b'],
+  usage: '[question]',
+  cooldown: 2,
+  execute(client, message, args) {
     	if(!args.join(" ").endsWith("?")) return message.channel.send("Ask a valid question!");
         //if(!args[0]) return message.channel.send("Ask a vaild question!");
         let question = args.join(" ");

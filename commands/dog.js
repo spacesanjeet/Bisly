@@ -3,7 +3,10 @@ const animals = require('relevant-animals')
 
 module.exports = {
     name: 'dog',
-    description: 'get random puppy images',
+    description: 'Get random puppy images',
+    guildOnly: true,
+    usage: '[command]',
+    cooldown: 5,
     execute(client, message, args) {
         animals.dog().then((s => {
             let embed = new RichEmbed()

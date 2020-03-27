@@ -1,20 +1,19 @@
 const { RichEmbed } = require('discord.js');
-const randomMeow = require("random-meow");
+const request = require('request');
 
 module.exports = {
     name: 'cat',
-    description: 'get random cat images',
+    description: 'Get random cat images',
+    guildOnly: true,
+    usage: '[command]',
+    cooldown: 5,
     execute(client, message, args) {
-        randomMeow().then((url => {
+        const link = "https://some-random-api.ml/img/cat";
+        request({url: link, json: true}, (err, res, body) => {
             let embed = new RichEmbed()
-            .setColor("RANDOM")
-            .setImage(url)
-            .setTimestamp(new Date())
+            .setImage(body.link)
             message.channel.send(embed)
-        }))
-        .catch(error => {
-            message.channel.send("Sorry, something went wrong!");
-            console.log(error)
+            if(err) return message.channel.send("Sorry, something went wrong!");
         });
     },
 };

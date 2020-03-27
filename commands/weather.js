@@ -3,7 +3,11 @@ const weather = require('weather-js');
 
 module.exports = {
     name: 'weather',
-    description: 'search weather',
+    description: 'Search weather details',
+    guildOnly: true,
+    aliases: ['climate'],
+    usage: '[location]',
+    cooldown: 5,
     execute(client, message, args) {
         weather.find({search: args.join(" "), degreeType: 'C'}, function(err, result) {
             if (err) message.channel.send(err);

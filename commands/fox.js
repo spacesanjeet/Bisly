@@ -1,20 +1,20 @@
 const { RichEmbed } = require('discord.js');
-const api = require('some-random-api');
+const request = require('request');
 
 module.exports = {
     name: 'fox',
-    description: 'get a fox image',
+    description: 'Get random fox images',
+    guildOnly: true,
+    usage: '[command]',
+    cooldown: 5,
     execute(client, message, args) {
-        api.foximg().then(img => {
+        const link = "https://some-random-api.ml/img/fox";
+        request({url: link, json: true}, (err, res, body) => {
             let embed = new RichEmbed()
             .setColor("RANDOM")
-            .setImage(img)
-            .setTimestamp(new Date())
+            .setImage(body.link)
             message.channel.send(embed)
-        })
-        .catch(error => {
-            console.log(error)
-            message.channel.send("Sorry, something went wrong!")
+            if(err) return message.channel.send("Sorry, something went wrong!");
         });
     },
 };
