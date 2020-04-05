@@ -20,6 +20,13 @@ const prefix = process.env.PREFIX
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
 
+const serverStats = {
+    guildID: '486139786839457793',
+    totalUsersID: '572402031407661085',
+    memberCountID: '572402033961992216',
+    botCount: '692967129632342017'
+}
+
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
 for (const file of commandFiles) {
@@ -137,6 +144,21 @@ client.on('messageDelete', async (message) => {
     		user = message.author.username
   	}
   	logs.send(`A message (**${message}**) was deleted in **${message.channel.name}** by **${user}**`);
+});
+
+ //______________________When someone joins the server___________________
+client.on('guildMemberAdd', member => {
+    if (member.guild.id !== serverStats.guildId) return;
+    client.channels.get(serverStats.totalUsersID).setName(`Total Users: ${member.guild.memberCount}`);
+    client.channels.get(serverStats.memberCountID).setName(`Member Count: ${member.guild.members.filter(m => !m.user.bot).size}`);
+    client.channels.get(serverStats.botCount).setName(`Bot Count: ${member.guild.members.filter(m => m.user.bot).size}`);
+});
+ //______________________When someone leaves the server__________________
+client.on('guildMemberRemove', member => {
+    if (member.guild.id !== serverStats.guildID) return;
+    client.channels.get(serverStats.totalUsersID).setName(`Total Users: ${member.guild.memberCount}`);
+    client.channels.get(serverStats.memberCountID).setName(`Member Count: ${member.guild.members.filter(m => !m.user.bot).size}`);
+    client.channels.get(serverStats.botCount).setName(`Bot Count: ${member.guild.members.filter(m => m.user.bot).size}`)
 });
 
 client.login(token);
