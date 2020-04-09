@@ -27,7 +27,11 @@
     "request": "^2.88.2",
     "node": "^13.11.0",
     "frinkiac-gif-generator": "^0.5.0",
-    "moment": "^2.24.0"
+    "moment": "^2.24.0",
+    "common-tags": "^1.8.0",
+    "name-to-imdb": "^2.3.2",
+    "imdb": "^1.1.0",
+    "one-liner-joke": "^1.2.0"
   },
   "engines": {
     "node": "12.x"
@@ -36,6 +40,12 @@
     "url": "https://glitch.com/edit/#!/hello-express"
   },
   "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ]
+}
   "keywords": [
     "node",
     "glitch",
