@@ -4,7 +4,7 @@ module.exports = {
   name: 'avatar',
   description: "Get your avatar or someone else's",
   guildOnly: true,
-  aliases: ['ava', 'a'],
+  aliases: ['ava', 'a', 'pfp'],
   usage: '[mention/id]',
   cooldown: 3,
   execute(client, message, args) {
