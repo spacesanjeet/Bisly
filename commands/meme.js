@@ -1,5 +1,5 @@
 const { RichEmbed } = require('discord.js');
-const request = require('request');
+const { meme } = require('memejs');
 
 module.exports = {
     name: 'meme',
@@ -8,14 +8,12 @@ module.exports = {
     usage: '[command]',
     cooldown: 5,
     execute(client, message, args) {
-        const link = "https://some-random-api.ml/meme";
-        request({url: link, json: true}, (err, res, body) => {
+        meme('memes', function(err, data) {
             let embed = new RichEmbed()
-            .setColor("RANDOM")
-            .setTitle(body.caption)
-            .setImage(body.image)
+            .setTitle(data.title)
+            .setImage(data.url)
             message.channel.send(embed)
-            if(err) return message.channel.send("Sorry, something went wrong!");
+            if(err) return message.channel.send("Sorry, something went bad!");
         });
     },
 };
