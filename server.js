@@ -37,8 +37,16 @@ for (const file of commandFiles) {
 
 const cooldowns = new Discord.Collection();
 
-client.once('ready', () => {
-	console.log('Ready!');
+client.on('ready', () => {
+    console.log('ready');
+    client.user.setPresence({
+      game: {
+        name: "with Sanjeet | b!help",
+        type: 'PLAYING'
+      },
+      status: 'online'
+	
+    });
 });
 
 client.on('message', message => {
