@@ -1,17 +1,12 @@
 class Paginator
 {
-    async constructor(client, channel, content, handler)
+    constructor(client, channel, content, handler)
     {
         this.index = 0;
         this.client = client;
         this.channel = channel;
         this.content = content;
         this.handler = handler;
-
-        this.init();
-
-        client.paginators.set(message.id, this);
-        this.interval = setInterval(this.stop, 30 * 1000);
     }
 
     async init()
@@ -19,13 +14,20 @@ class Paginator
         let msg = this.handler(this.content, this.index);
         this.message = await this.channel.send(msg);
 
-        this.message.react("\u25C0");
-        this.message.react("\u23F9");
-        this.message.react("\u25B6");
+        await this.message.react("\u25C0");
+        await this.message.react("\u23F9");
+        await this.message.react("\u25B6");
+
+        this.client.paginators.set(this.message.id, this);
+        this.timeout = setTimeout(this.stop, 30 * 1000);
     }
 
     update(reaction, user)
     {
+        if (user.bot) return;
+
+        console.log(`Emoji: ${reaction.emoji.name}`);
+
         if (reaction.emoji.name == "\u25C0")
         {
             this.left();
@@ -45,10 +47,10 @@ class Paginator
 
         else return;
 
-        reaction.users.remove(user);
+        reaction.remove(user);
 
-        clearInterval(this.interval);
-        this.interval = setInterval(this.stop, 30 * 1000);
+        clearTimeout(this.timeout);
+        this.timeout = setTimeout(this.stop, 30 * 1000);
     }
 
     left()
@@ -75,7 +77,8 @@ class Paginator
 
     stop()
     {
-        this.message
+        clearTimeout(this.timeout);
+        this.client.paginators.delete(this.message.id);
     }
 };
 

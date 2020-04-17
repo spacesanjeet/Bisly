@@ -1,13 +1,13 @@
 const prefix = process.env.PREFIX
 const { Paginator } = require("../util/Paginator.js");
-const { MessageEmbed } = require("discord.js");
+const { RichEmbed } = require("discord.js");
 
 module.exports = {
     name: 'help',
     description: 'List all of my commands or info about a specific command.',
     aliases: ['commands'],
     usage: '[command name]',
-    execute(client, message, args) {
+    async execute(client, message, args) {
         const { commands } = message.client;
         if(!args.length) {
             let arr = commands.array();
@@ -20,22 +20,23 @@ module.exports = {
             }
 
             // Initiate paginator
-            new Paginator(
+            await new Paginator(
                 client,
-                channel,
+                message.channel,
                 content,
                 (content, index) => {
-                    let content = "Here's a list of my commands:\n";
-                    content += content[index].map(cmd => `**${cmd.name}**: ${cmd.description}\n`);
-                    content += `\nYou can send \`${prefix}help [command name]\` to get info on a specific command!`;
+                    let desc = content[index].map(cmd => (`**${cmd.name}**: ${cmd.description}\n`));
+                    desc += `\nYou can send \`${prefix}help [command name]\` to get info on a specific command!`;
 
-                    let embed = new MessageEmbed();
-                    embed.setTitle("Bisly's Manual");
-                    embed.setDescription(content);
+                    let embed = new RichEmbed()
+                        .setTitle("Bisly's Manual")
+                        .setDescription(desc);
 
                     return embed;
                 }
-            );
+            ).init();
+
+            return;
         }
 
         const data = [];
