@@ -2,10 +2,10 @@ const { RichEmbed } = require('discord.js');
 const relevantUrban = require('relevant-urban');
 
 module.exports = {
-    name: 'def',
+    name: 'urban',
     description: 'Definitions from urban dictionary',
     guildOnly: true,
-    aliases: ['dict'],
+    aliases: ['dict', 'def'],
     usage: '[word]',
     cooldown: 3,
     execute(client, message, args) {
