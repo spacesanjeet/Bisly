@@ -19,14 +19,12 @@ class Paginator
         await this.message.react("\u25B6");
 
         this.client.paginators.set(this.message.id, this);
-        this.timeout = setTimeout(this.stop, 30 * 1000);
+        this.timeout = setTimeout(() => this.stop(), 30 * 1000);
     }
 
     update(reaction, user)
     {
         if (user.bot) return;
-
-        console.log(`Emoji: ${reaction.emoji.name}`);
 
         if (reaction.emoji.name == "\u25C0")
         {
@@ -50,7 +48,7 @@ class Paginator
         reaction.remove(user);
 
         clearTimeout(this.timeout);
-        this.timeout = setTimeout(this.stop, 30 * 1000);
+        this.timeout = setTimeout(() => this.stop(), 30 * 1000);
     }
 
     left()
@@ -77,8 +75,9 @@ class Paginator
 
     stop()
     {
-        clearTimeout(this.timeout);
         this.client.paginators.delete(this.message.id);
+        this.message.clearReactions();
+        clearTimeout(this.timeout);
     }
 };
 

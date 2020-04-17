@@ -30,7 +30,8 @@ module.exports = {
 
                     let embed = new RichEmbed()
                         .setTitle("Bisly's Manual")
-                        .setDescription(desc);
+                        .setDescription(desc)
+                        .setColor([247, 8, 39]);
 
                     return embed;
                 }
