@@ -19,6 +19,7 @@ const prefix = process.env.PREFIX
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
+client.paginators = new Discord.Collection();
 
 const serverStats = {
     guildID: '486139786839457793',
@@ -123,6 +124,14 @@ client.on('guildMemberRemove', member => {
       .setTimestamp()
       .setFooter(member.guild);
     channel.send(embed)
+});
+
+client.on('messageReactionAdd', (reaction, user) => {
+	let paginator = client.paginators.get(reaction.message.id);
+	if (paginator)
+	{
+		paginator.update(reaction, user);
+	}
 });
 
 client.on('messageDelete', async (message) => {
