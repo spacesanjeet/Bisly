@@ -15,7 +15,7 @@ module.exports = {
             
             while (arr.length)
             {
-                let n = (arr.length >= 5) ? 5 : (arr.length);
+                let n = (arr.length >= 6) ? 6 : (arr.length);
                 content.push(arr.splice(0, n));
             }
 
