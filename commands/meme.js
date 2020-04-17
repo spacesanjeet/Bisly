@@ -7,13 +7,13 @@ module.exports = {
     guildOnly: true,
     usage: '[command]',
     cooldown: 5,
-    execute(client, message, args) {
+    async execute(client, message, args) {
+        const m = await message.channel.send("Meme on the way!");
         meme('memes', function(err, data) {
             let embed = new RichEmbed()
             .setTitle(data.title)
             .setImage(data.url)
-            message.channel.send(embed)
-            if(err) return message.channel.send("Sorry, something went bad!");
+            m.edit(embed);
         });
     },
 };
