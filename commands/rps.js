@@ -2,7 +2,7 @@ const { MessageCollector } = require('discord.js');
 
 module.exports = {
     name: 'rps',
-    description: 'Play rock-paper-scissors with the me',
+    description: 'Play rock-paper-scissors with me',
     guildOnly: true,
     usage: '[command, then choose between (r), (p), (s)]',
     cooldown: 5,
