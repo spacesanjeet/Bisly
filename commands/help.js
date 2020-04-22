@@ -25,13 +25,14 @@ module.exports = {
                 message.channel,
                 content,
                 (content, index) => {
-                    let desc = content[index].map(cmd => (`**${cmd.name}**: ${cmd.description}\n`));
+                    let desc = content[index].map(cmd => (`**${cmd.name}**: ${cmd.description}`)).join("\n");
                     desc += `\nYou can send \`${prefix}help [command name]\` to get info on a specific command!`;
 
                     let embed = new RichEmbed()
                         .setTitle("Bisly's Manual")
                         .setDescription(desc)
-                        .setColor([247, 8, 39]);
+                        .setColor([247, 8, 39])
+                        .setFooter(`Requested by ${message.author.username} | Page ${index+1}/${content.length}`, message.author.displayAvatarURL);
 
                     return embed;
                 }
@@ -56,6 +57,17 @@ module.exports = {
 
         data.push(`**Cooldown:** ${command.cooldown || 3} second(s)`);
 
-        message.channel.send(data, { split: true });
+        message.channel.send({
+            embed: {
+                title: "Bisly's Manual",
+                description: data.join("\n"),
+                footer: {
+                    text: `Requested by ${message.author.username}`,
+                    icon_url: message.author.displayAvatarURL
+                },
+                color: 16189479
+            },
+            split: true
+        });
     }
 };
