@@ -10,7 +10,7 @@ module.exports = {
     cooldown: 2,
     execute(client, message, args) {
         search(args.join("_"), function(err, res) {
-            if (err) return message.channel.send('Sorry, something went wrong!');
+            if (err) return message.channel.send('Provide enough arguments!');
             let videos = res.videos.slice(0, 10);
             let resp = [];
             for (var i in videos) {
