@@ -14,6 +14,7 @@ module.exports = {
             let videos = res.videos.slice(0, 10);
             let resp = [];
             for (var i in videos) {
+                resp.push(`**${videos[i].title}**`);
                 resp.push(`${videos[i].url}`);
             }
             let embed = new RichEmbed()
