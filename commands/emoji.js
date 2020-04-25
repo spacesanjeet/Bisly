@@ -7,10 +7,11 @@ module.exports = {
     name: 'emoji',
     description: 'Get the big emoji',
     guildOnly: true,
+    aliases: ['emote'],
     usage: '[emoji]',
     cooldown: 3,
     async execute(client, message, args) {
-      if(!args) return message.channel.send("Provide a emoji!");
+      if(!args.join(" ")) return message.channel.send("Provide a emoji!");
         try {
             const emote = Util.parseEmoji(args[0]);
             if (emote.animated === true) {
