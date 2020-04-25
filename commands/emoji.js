@@ -5,7 +5,7 @@ const fs = require('fs');
 
 module.exports = {
     name: 'emoji',
-    description: 'Get the big emoji',
+    description: 'Enlarge the emoji',
     guildOnly: true,
     aliases: ['emote'],
     usage: '[emoji]',
