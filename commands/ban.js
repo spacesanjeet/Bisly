@@ -5,6 +5,7 @@ module.exports = {
     usage: '[mention reason(optional)]',
     cooldown: 5,
     async execute(client, message, args) {
+        if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send("You don't have permissions to use this command!");
         let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
         if(!bUser) return message.channel.send("Can't find that user!");
         if(!bUser.bannable) return message.channel.send("I cannot ban this user! Do they have a higher role? Do I have ban permissions?");
