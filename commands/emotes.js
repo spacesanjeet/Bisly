@@ -2,7 +2,7 @@ const { RichEmbed } = require('discord.js');
 
 module.exports = {
     name: 'emotes',
-    description: 'Get all server emojis',
+    description: 'View all server emojis',
     guildOnly: true,
     usage: '[command]',
     cooldown: 3,
