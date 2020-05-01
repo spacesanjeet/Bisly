@@ -9,7 +9,7 @@ module.exports = {
   cooldown: 5,
   execute(client, message, args) {
     	let embed = new RichEmbed()
-      .setColor("#000000")
+    	.setColor("#F70827")
     	.setImage(message.guild.iconURL + '?size=2048')
     	.setFooter(message.guild.name)
     	message.channel.send(embed)
