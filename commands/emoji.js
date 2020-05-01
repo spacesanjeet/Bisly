@@ -18,7 +18,9 @@ module.exports = {
               const URL = `https://cdn.discordapp.com/emojis/${emote.id}.gif?v=1`;
               const { body: buffer } = await snek.get(`${URL}`);
               const toSend = fs.writeFileSync('emote.gif', buffer);
-              const name = args[0].match(/:[A-Za-z0-9]+:/)
+              const name = args[0].match(/\w+/);
+              const id = args[0].match(/\d{18}/);
+              message.channel.send(`\`Id:\` **${id}**\n\`Name:\` **${name}**`);
               message.channel.send({ file: 'emote.gif' });
             } else if (emote.id === null) {
               const twemote = twemoji.parse(args[0]);
@@ -31,7 +33,9 @@ module.exports = {
               const URL = `https://cdn.discordapp.com/emojis/${emote.id}.png`;
               const { body: buffer } = await snek.get(`${URL}`);
               const toSend = fs.writeFileSync('emote.png', buffer);
-              const name = args[0].match(/:[A-Za-z0-9]+:/)
+              const name = args[0].match(/\w+/);
+              const id = args[0].match(/\d{18}/);
+              message.channel.send(`\`Id:\` **${id}**\n\`Name:\` **${name}**`);
               message.channel.send({ file: 'emote.png' });
             }
           } catch (error) {
