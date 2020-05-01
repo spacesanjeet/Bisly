@@ -1,6 +1,6 @@
 module.exports = {
 	name: '8ball',
-	description: 'Ask Bisly your questions and get quick responses',
+	description: 'Ask me your questions and get quick responses!',
   guildOnly: true,
 	aliases: ['8b'],
   usage: '[question]',
