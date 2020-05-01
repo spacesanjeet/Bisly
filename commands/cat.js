@@ -11,6 +11,7 @@ module.exports = {
         const link = "https://some-random-api.ml/img/cat";
         request({url: link, json: true}, (err, res, body) => {
             let embed = new RichEmbed()
+            .setColor('RANDOM')
             .setImage(body.link)
             message.channel.send(embed)
             if(err) return message.channel.send("Sorry, something went wrong!");
