@@ -15,7 +15,7 @@ module.exports = {
         let join = args.join(" ");
         let message_time = moment(new Date());
         let timestamp = message_time.format('MMMM Do YYYY, h:mm:ss a')
-        let reason = join.split(rUser).join(" ");
+        let reason = join.split(/<@\d{18}>|\d{18}/).join('')
 
         let embed = new RichEmbed()
         .setTitle("Report")
