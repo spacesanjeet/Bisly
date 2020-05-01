@@ -102,7 +102,7 @@ client.on('guildMemberAdd', member => {
     let embed = new RichEmbed()
     .setThumbnail(memberavatar)
     .setTitle("User Joined")
-    .setColor("RANDOM")
+    .setColor("#F70827")
     .setDescription(`Welcome to the server, ${member}, hope you enjoy your time here! You are, ${member.guild.memberCount}th member of the guild!`)
     .setTimestamp(new Date())
     .setFooter(member.guild)
@@ -115,7 +115,7 @@ client.on('guildMemberRemove', member => {
     let embed = new RichEmbed()
       .setThumbnail(client.users.get(member.id).displayAvatarURL)
       .setTitle("Member Left")
-      .setColor("RANDOM")
+      .setColor("#F70827")
       .setDescription(`We are sad to see you leaving, ${member}, see ya soon!`)
       .addField("Username : ", client.users.get(member.id).username, true)
       .addField("ID : ", client.users.get(member.id).id, true)
@@ -155,6 +155,7 @@ client.on('messageDelete', async (message) => {
   	}
 
     let embed = new Discord.RichEmbed()
+    .setColor("#F70827")
     .setTitle('Message Delete')
     .addField('Message', `${message}`)
     .addField('Channel', `${message.channel.name}`)
