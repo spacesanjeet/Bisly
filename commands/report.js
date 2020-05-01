@@ -1,4 +1,5 @@
 const { RichEmbed } = require('discord.js');
+const moment = require('moment');
 
 module.exports = {
     name: 'report',
@@ -12,6 +13,8 @@ module.exports = {
         let reportsChannel = message.guild.channels.find(c => c.name.match(/reports/g))
         if(!reportsChannel) return message.channel.send("Can't find a reports channel!!");
         let join = args.join(" ");
+        let message_time = moment(new Date());
+        let timestamp = message_time.format('MMMM Do YYYY, h:mm:ss a')
         let reason = join.split(rUser).join(" ");
 
         let embed = new RichEmbed()
@@ -20,7 +23,7 @@ module.exports = {
         .addField("Reported user:", `${rUser} with ID: ${rUser.id}`)
         .addField("Reported by:", `${message.author} with ID: ${message.author.id}`)
         .addField("Channel:", `${message.channel}`)
-        .addField("Time:", `${message.createdAt}`)
+        .addField("Time:", `${timestamp}`)
         .addField("Reason:", reason);
 
         message.delete().catch(O_o=>{});
