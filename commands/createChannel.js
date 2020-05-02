@@ -3,7 +3,7 @@ module.exports = {
     description: 'Create a channel',
     guildOnly: true,
     aliases: ['channel'],
-    usage: '[(channelName, channelType)]',
+    usage: '[channelName, channelType]',
     cooldown: 5,
     execute(client, message, args) {
         let mss=message.content.split(' ');
