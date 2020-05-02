@@ -4,7 +4,7 @@ const request = require('request');
 module.exports = {
     name: 'pokemon',
     description: 'Get pokemon details',
-    aliases: ['poke'],
+    aliases: ['pokedex', 'dex', 'poke'],
     guildOnly: true,
     usage: '[pokemonName]',
     cooldown: 2,
