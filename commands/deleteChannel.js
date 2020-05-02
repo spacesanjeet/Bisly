@@ -3,7 +3,7 @@ module.exports = {
     description: 'Delete a channel',
     guildOnly: true,
     aliases: ['dchannel'],
-    usage: '[mentionChannel, channelId]',
+    usage: '[mentionChannel/channelId]',
     cooldown: 5,
     execute(client, message, args) {
         let ch,chs='';
