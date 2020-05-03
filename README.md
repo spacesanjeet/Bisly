@@ -27,6 +27,6 @@ Notes :-
 
 <p>You can join the support server for further help and assistance. Here is the link. https://discord.gg/B83ScTT</p>
 <p>We are able to develop Bisly due to constant support from many other developers and the discord community.</p>
-<p>Honorable mention to my brother and himself a discord.js developer <code>Amethyst</code> and My very good friend <code>David Bryan</code>. Chech them out here, https://github.com/AmethystAnimion, and https://github.com/CynusW</p>
+<p>Honorable mention to my brother and himself a discord.js developer <code>Amethyst</code> and my very good friend <code>David Bryan</code>. Chech them out here, https://github.com/AmethystAnimion, and https://github.com/CynusW</p>
 <p>Feel free to contact and provide feedbacks and suggestion for Bisly. They are always appreciated. Thank you. ^_^.</p>
 
