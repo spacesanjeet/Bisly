@@ -4,10 +4,11 @@ const imdb = require('imdb');
 
 module.exports = {
   name: 'imdb',
-  description: 'Get basic info about Movies and shows',
+  description: 'Get basic info about movies and shows',
   guildOnly: true,
   aliases: ['movie'],
   usage: '[string]',
+  example: '13 reasons why',
   cooldown: 3,
   execute(client, message, args) {
     let movie = args.join(' ')
