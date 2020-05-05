@@ -4,6 +4,7 @@ module.exports = {
     guildOnly: true,
     aliases: ['dchannel'],
     usage: '[mentionChannel/channelId]',
+    example: '#pokemon-spawn',
     cooldown: 5,
     execute(client, message, args) {
         let ch,chs='';
