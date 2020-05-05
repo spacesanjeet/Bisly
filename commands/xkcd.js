@@ -5,7 +5,7 @@ module.exports = {
     name: 'xkcd',
     description: 'Get xkcd web comics',
     guildOnly: true,
-    usage: '[command]',
+    usage: ' ',
     cooldown: 3,
     execute(client, message, args) {
         xkcd.img(function(err, res) {
