@@ -4,7 +4,7 @@ module.exports = {
     name: 'joke',
     description: 'Get random jokes',
     guildOnly: 'true',
-    usage: '[command]',
+    usage: ' ',
     cooldown: 3,
     execute(client, message, args) {
         var getRandomJoke = oneLinerJoke.getRandomJoke();
