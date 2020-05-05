@@ -4,7 +4,7 @@ module.exports = {
     name: 'invite',
     description: 'Invite link of the bot',
     guildOnly: true,
-    usage: '[command]',
+    usage: ' ',
     cooldown: 5,
     execute(client, message, args) {
         let embed = new RichEmbed()
