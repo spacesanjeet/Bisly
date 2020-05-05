@@ -7,6 +7,7 @@ module.exports = {
     guildOnly: true,
     aliases: ['ly'],
     usage: '[Music/Song]',
+    example: 'still falling for you',
     cooldown: 3,
     execute(client, message, args) {
         let lyrics = args.join(" ")
@@ -43,4 +44,4 @@ module.exports = {
     }
     });
     },
-};
+}
