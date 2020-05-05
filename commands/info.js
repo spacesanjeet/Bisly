@@ -5,7 +5,7 @@ module.exports = {
     description: 'Providing some useful information about myself',
     guildOnly: true,
     aliases: ['about', 'bot'],
-    usage: '[command]',
+    usage: ' ',
     cooldown: 5,
     execute(client, message, args) {
         let embed = new RichEmbed()
