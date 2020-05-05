@@ -1,9 +1,10 @@
 module.exports = {
     name: 'createchannel',
-    description: 'Create a channel',
+    description: 'Create a channel (text, voice, category)',
     guildOnly: true,
     aliases: ['channel'],
     usage: '[channelName, channelType]',
+    example: 'pokemon-spawn text',
     cooldown: 5,
     execute(client, message, args) {
         let mss=message.content.split(' ');
