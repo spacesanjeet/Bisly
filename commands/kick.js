@@ -4,7 +4,8 @@ module.exports = {
     name: 'kick',
     description: 'Kick a user with reason',
     guildOnly: true,
-    usage: '[mention reason(optional)]',
+    usage: '[mentionUser/Id reason(optional)]',
+    example: '@spacesanjeet abusing',
     cooldown: 5,
     async execute(client, message, args) {
         if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send("You don't have permissions to use this command!");
