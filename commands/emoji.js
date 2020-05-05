@@ -9,6 +9,7 @@ module.exports = {
     guildOnly: true,
     aliases: ['emote'],
     usage: '[emoji]',
+    example: ':yum:',
     cooldown: 3,
     async execute(client, message, args) {
       if(!args.join(" ")) return message.channel.send("Provide a emoji!");
@@ -35,7 +36,7 @@ module.exports = {
               const toSend = fs.writeFileSync('emote.png', buffer);
               const name = args[0].match(/\w+/);
               const id = args[0].match(/\d{18}/);
-              message.channel.send(`\`Id:\` **${id}**\n\`Name:\` **${name}**`);
+              message.channel.send(`\`Id:\` **${id}**\n\`Name:\` **${name}**`)
               message.channel.send({ file: 'emote.png' });
             }
           } catch (error) {
