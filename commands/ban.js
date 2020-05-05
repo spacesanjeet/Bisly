@@ -2,7 +2,8 @@ module.exports = {
     name: 'ban',
     description: 'Use ban hammer on someone',
     guildOnly: true,
-    usage: '[mention reason(optional)]',
+    usage: '[mentionUser/Id reason(optional)]',
+    example: '@spacesanjeet spamming',
     cooldown: 5,
     async execute(client, message, args) {
         if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send("You don't have permissions to use this command!");
