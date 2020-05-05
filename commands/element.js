@@ -10,6 +10,7 @@ module.exports = {
 	guildOnly: true,
 	aliases: ['e'],
 	usage: ['name of the element'],
+  	example: 'Hydrogen',
 	cooldown: 2,
 	execute(client, message, args) {
 		let element = args.join(" ");
