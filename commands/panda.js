@@ -5,7 +5,7 @@ module.exports = {
     name: 'panda',
     description: 'Get random cute panda images',
     guildOnly: true,
-    usage: '[command]',
+    usage: ' ',
     cooldown: 5,
     execute(client, message, args) {
         const link = "https://some-random-api.ml/img/panda";
