@@ -7,6 +7,7 @@ module.exports = {
     guildOnly: true,
     aliases: ['climate'],
     usage: '[location]',
+    example: 'new york',
     cooldown: 5,
     execute(client, message, args) {
         weather.find({search: args.join(" "), degreeType: 'C'}, function(err, result) {
