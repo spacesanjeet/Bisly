@@ -7,6 +7,7 @@ module.exports = {
     aliases: ['pokedex', 'dex', 'poke'],
     guildOnly: true,
     usage: '[pokemonName]',
+    example: 'kyogre',
     cooldown: 2,
     execute(client, message, args) {
         let entry = args;
