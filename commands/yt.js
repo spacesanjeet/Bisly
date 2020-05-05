@@ -6,7 +6,8 @@ module.exports = {
     description: 'Search youtube',
     guildOnly: true,
     aliases: ['youtube'],
-    usage: '[string/video/query] (provide sufficient arguments)',
+    usage: '[string/video/query]',
+    example: 'Imagine dragons thunder',
     cooldown: 2,
     execute(client, message, args) {
         search(args.slice(0).join(' '), function(err, res) {
