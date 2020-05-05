@@ -6,6 +6,7 @@ module.exports = {
   guildOnly: true,
   aliases: ['ava', 'a', 'pfp'],
   usage: '[mention/id]',
+  example: '@spacesanjeet',
   cooldown: 3,
   execute(client, message, args) {
     let user = message.mentions.members.first();
