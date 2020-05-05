@@ -5,7 +5,7 @@ module.exports = {
     name: 'fox',
     description: 'Get random fox images',
     guildOnly: true,
-    usage: '[command]',
+    usage: ' ',
     cooldown: 5,
     execute(client, message, args) {
         const link = "https://some-random-api.ml/img/fox";
