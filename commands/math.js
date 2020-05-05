@@ -6,6 +6,7 @@ module.exports = {
     description: 'Do calculations',
     guildOnly: true,
     usage: '[calculation]',
+    example: '8^3',
     cooldown: 3,
     execute(client, message, args) {
         if (!args[0]) return message.channel.send("Enter a valid calculation!")
@@ -25,4 +26,3 @@ module.exports = {
         message.channel.send(embed)
     },
 };
-
