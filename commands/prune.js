@@ -3,12 +3,13 @@ module.exports = {
     description: 'Prune desired no. of messages',
     guildOnly: true,
     aliases: ['purge'],
-    usage: '[no of messages to be deleted, max 99]',
+    usage: '[no of messages]',
+    example: '69',
     cooldown: 5,
     execute(client, message, args) {
         let mss=message.content.split(' ');
         if(mss[0]!=null){
-        var num=parseInt(mss[0]);
+        var num=parseInt(mss[1]);
             let perms = message.member.permissions;
             let prm = perms.has("MANAGE_MESSAGES");
             if(prm==true){
