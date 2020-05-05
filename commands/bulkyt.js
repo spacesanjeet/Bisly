@@ -6,7 +6,8 @@ module.exports = {
     description: 'Search bulk youtube links',
     guildOnly: true,
     aliases: ['byt', 'bulkyoutube'],
-    usage: '[string/video/query] (provide enough arguments)',
+    usage: '[string/video/query]',
+    example: 'Imagine dragons thunder',
     cooldown: 2,
     execute(client, message, args) {
         search(args.join("_"), function(err, res) {
@@ -18,7 +19,7 @@ module.exports = {
                 resp.push(`${videos[i].url}`);
             }
             let embed = new RichEmbed()
-            .setTitle(`Results to ${args.slice(0).join(' ')}`)
+            .setTitle(`Results for ${args.slice(0).join(' ')}`)
             .setColor("RANDOM")
             .setDescription(resp.join("\n"))
             message.channel.send(embed)
