@@ -1,16 +1,18 @@
 const { RichEmbed } = require('discord.js');
-const oneLinerJoke = require('one-liner-joke');
+
 module.exports = {
-    name: 'joke',
-    description: 'Get random jokes',
-    guildOnly: 'true',
+    name: 'invite',
+    description: 'Invite link of the bot',
+    guildOnly: true,
     usage: ' ',
-    cooldown: 3,
+    cooldown: 5,
     execute(client, message, args) {
-        var getRandomJoke = oneLinerJoke.getRandomJoke();
-        const embed = new RichEmbed()
-        .setColor("RANDOM")
-        .setDescription(getRandomJoke.body)
+        let embed = new RichEmbed()
+        .setColor('RANDOM')
+        .setTitle('Invite Link ❤')
+        .setURL("https://discordapp.com/oauth2/authorize?client_id=496198253193461792&scope=bot&permissions=93399")
+        .setTimestamp(new Date())
+        .setFooter('Requested by: ' + message.author.username)
         message.channel.send(embed)
     },
 };
