@@ -6,7 +6,8 @@ module.exports = {
 	description: 'Get details about someone',
   guildOnly: true,
 	aliases: ['userinfo', 'whois'],
-  usage: '[mention]',
+  usage: '[mentionUser/Id]',
+  example: '@spacesanjeet',
   cooldown: 3,
   execute(client, message, args) {
     let [id1] = args;
