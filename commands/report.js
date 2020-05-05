@@ -6,6 +6,7 @@ module.exports = {
     description: 'Report someone with reason',
     guildOnly: true,
     usage: '[mentionUser/Id, reason]',
+    example: '@spacesanjeet spamming',
     cooldown: 5,
     execute(client, message, args) {
         let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
