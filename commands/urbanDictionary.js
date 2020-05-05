@@ -5,8 +5,9 @@ module.exports = {
     name: 'urban',
     description: 'Definitions from urban dictionary',
     guildOnly: true,
-    aliases: ['dict', 'def'],
+    aliases: ['def', 'dict'],
     usage: '[word]',
+    example: 'senpai',
     cooldown: 3,
     execute(client, message, args) {
         if (!args[0]) return message.channel.send("Enter something to search for!");
