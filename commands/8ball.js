@@ -4,6 +4,7 @@ module.exports = {
   guildOnly: true,
 	aliases: ['8b'],
   usage: '[question]',
+  example: 'will a legendary spawn today?',
   cooldown: 2,
   execute(client, message, args) {
     	if(!args.join(" ").endsWith("?")) return message.channel.send("Ask a valid question!");
