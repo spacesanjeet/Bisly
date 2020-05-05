@@ -4,9 +4,9 @@ const moment = require('moment');
 module.exports = {
 	name: 'server',
 	description: 'Get server/guild info',
-  	guildOnly: true,
+  guildOnly: true,
 	aliases: ['serverinfo', 'guildinfo', 'guild'],
-	usage: '[command]',
+	usage: ' ',
 	cooldown: 3,
 	execute(client, message, args) {
 		if (!args.length) {
@@ -32,10 +32,10 @@ module.exports = {
     		.setColor('#20bab5') 
     		.setTitle(`**${message.guild.name} [${message.guild.id}]**`) 
     		.setThumbnail(message.guild.iconURL)
-			.addField(`Channels:`, `> **${textChnl.length}** Text, **${voiceChnl.length}** Voice, **${chnlCat.length}** Categories.\n > AFK: **${message.guild.afkChannel ? message.guild.afkChannel : `None`}**`)
-			.addField(`Members:`, `> ${message.guild.memberCount} members\n > Owner: **${message.guild.owner}** (ID: **${message.guild.owner.id}**)`)
-			.addField(`Other:`, `> Roles: **${message.guild.roles.size}**\n > Region: **${message.guild.region.slice(0,1).toUpperCase()}${message.guild.region.slice(1)}**\n > Created at: **${Created}**\n > Verification Level: **${message.guild.verificationLevel}**`)
-			.addField(`Roles:`, "> To see a list of all roles use `b!server roles`")
+			  .addField(`Channels:`, `> **${textChnl.length}** Text, **${voiceChnl.length}** Voice, **${chnlCat.length}** Categories.\n > AFK: **${message.guild.afkChannel ? message.guild.afkChannel : `None`}**`)
+			  .addField(`Members:`, `> ${message.guild.memberCount} members\n > Owner: **${message.guild.owner}** (ID: **${message.guild.owner.id}**)`)
+			  .addField(`Other:`, `> Roles: **${message.guild.roles.size}**\n > Region: **${message.guild.region.slice(0,1).toUpperCase()}${message.guild.region.slice(1)}**\n > Created at: **${Created}**\n > Verification Level: **${message.guild.verificationLevel}**`)
+			  .addField(`Roles:`, "> To see a list of all roles use `b!server roles`")
     		message.channel.send(embed)
 		}
 
