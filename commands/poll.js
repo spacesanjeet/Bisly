@@ -2,7 +2,8 @@ module.exports = {
     name: 'poll',
     description: 'Make a simple poll',
     guildOnly: true,
-    usage: '[question for poll]',
+    usage: '[question]',
+    example: 'Should we organize a pokemon tournament?',
     cooldown: 5,
     async execute(client, message, args) {
         //if(!args[0]) return message.channel.send("Please specify a question!");
