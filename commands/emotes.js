@@ -4,7 +4,7 @@ module.exports = {
     name: 'emotes',
     description: 'View all server emojis',
     guildOnly: true,
-    usage: '[command]',
+    usage: ' ',
     cooldown: 3,
     execute(client, message, args) {
         const emojiList = message.guild.emojis.map(e=>e.toString()).join(" ");
