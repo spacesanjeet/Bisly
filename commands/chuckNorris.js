@@ -2,11 +2,11 @@ const { RichEmbed } = require('discord.js');
 const joke = require('chuck-joke-node');
 
 module.exports = {
-    name: 'norris',
+    name: 'chuck',
     description: 'Get chuck norris jokes',
     guildOnly: true,
-    aliases: ['chuck'],
-    usage: '[command]',
+    aliases: ['norris'],
+    usage: ' ',
     cooldown: 3,
     execute(client, message, args) {
         joke.random().then((data) => {
