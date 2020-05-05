@@ -5,6 +5,7 @@ module.exports = {
     guildOnly: true,
     aliases: ['fd'],
     usage: '[write the desired feedback]',
+    example: 'please add some weeb commands uwu',
     cooldown: 5,
     execute(client, message, args) {
         if(!args.join(" ")) return message.channel.send("Specify a feedback please!");
