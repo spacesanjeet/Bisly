@@ -5,7 +5,7 @@ module.exports = {
     name: 'dog',
     description: 'Get random dog images',
     guildOnly: true,
-    usage: '[command]',
+    usage: ' ',
     cooldown: 5,
     execute(client, message, args) {
         animals.dog().then((s => {
