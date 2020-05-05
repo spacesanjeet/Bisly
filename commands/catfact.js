@@ -5,7 +5,7 @@ module.exports = {
     name: 'catfact',
     description: 'Get random cat facts',
     guildOnly: true,
-    usage: '[command]',
+    usage: ' ',
     cooldown: 2,
     execute(client, message, args) {
         let randomFact = catFacts.random();
