@@ -12,5 +12,5 @@ module.exports = {
     client.destroy();
     client.login(token);
     message.channel.send(`Rebooted successfully. API latency is ${Math.round(client.ping)}ms`);
-  }
+  },
 };
