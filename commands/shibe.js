@@ -5,7 +5,7 @@ module.exports = {
     name: 'shibe',
     description: 'Get random shibes',
     guildOnly: true,
-    usage: '[command]',
+    usage: ' ',
     cooldown: 5,
     execute(client, message, args) {
         animals.shibe().then((s => {
