@@ -4,8 +4,7 @@ Bisly v3.0.0
 <p align="center">
   <img src="https://discordbots.org/api/widget/496198253193461792.svg" alt="Bisly" />
   <img src="https://botsfordiscord.com/api/bot/496198253193461792/widget" title="Visit Bisly listed on Bots for Discord!" alt="Bisly's Widget Failed to Load" />
-
-<br><br>
+<br>
 <p align="center">
   <img src="https://forthebadge.com/images/badges/made-with-javascript.svg" />
 <br><br>
