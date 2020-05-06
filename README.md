@@ -9,7 +9,6 @@ Bisly v3.0.0
   <img src="https://forthebadge.com/images/badges/made-with-javascript.svg" />
 <br><br>
 
-<p>Not released yet! Coming very soon.</p>
 <p>Bisly is a general purpose discord bot with commands ranging from general to moderation, and from fun to some cute animal commands. With over 45 commands, you won't regret using Bisly.<br>
 This new update comes with a new polished code, improved performance and more reliable up-time. Use feedback command <code>b!feedback [your feedback]</code> to inform us about the bugs you encourter, or about any commands you would like to see in Bisly.</p>
 
