@@ -11,9 +11,9 @@ module.exports = {
         let embed = new RichEmbed()
         .setTitle("Bisly 3.0.0")
         .setColor('#F70827')
-        .setDescription(`Bisly is a general purpose discord bot which is developed with the view of performing all general tasks in mind.\n
-        The bot contains commands for **Fun**, **Moderation**, **Misc** and **General** tasks.\n
-        In this update the source code has been rewritten completely. For further changes, consider checking the Bisly's Github.`)
+        .setDescription(`Bisly is a general-purpose discord bot that is developed to perform all basic tasks in mind.\n
+        In this update, the source code has been rewritten completely. A new and improved help system with cooldowns and examples.\n
+        For further changes, consider taking a look at the Bisly's Github.`)
         .addField("Development Server: ", "[Bisly's Home](https://discord.gg/B83ScTT)")
         .addField("Webpage:", "[BislyWeb](https://bisly.glitch.me)")
         .addField("Github repository:", "[Bisly on Github](https://github.com/spacesanjeet/Bisly)")
