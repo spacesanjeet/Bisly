@@ -41,11 +41,22 @@ module.exports = {
 
 		if (args == "roles") {
 			let Roles = message.guild.roles.map(r => r.name).sort().splice(0).join(', ')
-			let embed = new RichEmbed()
-			.setColor('RANDOM')
-			.setTitle(`**Roles[${message.guild.roles.size}]**`)
-			.setDescription(Roles)
-			message.channel.send(embed)
+
+			let max = 1024;
+        	let start = 0, end = max;
+        	let ar = new Array();
+
+        	while (start < Roles.length) {
+            	let x = Roles.substring(start, end);
+
+				let embed = new RichEmbed()
+				.setColor('RANDOM')
+				.setTitle(`**Roles[${message.guild.roles.size}]**`)
+				.setDescription(x)
+				message.channel.send(embed)
+
+				start += max; end += max;
+			}
 		}
 	},
 };
