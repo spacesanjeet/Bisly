@@ -14,6 +14,6 @@ module.exports = {
         if(!bReason) bReason = "No reason provided";
         await bUser.ban(bReason)
             .catch(error => message.reply(`Sorry ${message.author} I couldn't ban because of : ${error}`));
-        message.channel.send(`${bUser.user.tag} has been banned by **${message.author.tag}** because of **${bReason}**`);
+        message.channel.send(`**${bUser.user.tag}** has been banned by **${message.author.tag}** because of **${bReason}**`);
     },
 };
