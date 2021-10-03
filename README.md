@@ -1,13 +1,16 @@
+# NOTICE
+<b>This is to inform everyone that, on 10th October 2021 Bisly had been deleted from Discord and the Github repository had been archived. No Further development will be taken place and the project has been closed. The developer sees no benefits to continue and improve on Bisly. Programming Bisly has been a great learning experience for the developer, but he had to close down the project because of no further benefits and less time being devoted by him to programming since last year.
+
+We thank all the contributors and people who have in any way helped in the development of Bisly.</b>
+
+---
+
 Bisly v3.0.0
 =====
-### A general purpose discord bot
-<p align="center">
-  <img src="https://discordbots.org/api/widget/496198253193461792.svg" alt="Bisly" />
-  <img src="https://botsfordiscord.com/api/bot/496198253193461792/widget" title="Visit Bisly listed on Bots for Discord!" alt="Bisly's Widget Failed to Load" />
-<br>
-<p align="center">
-  <img src="https://forthebadge.com/images/badges/built-with-love.svg" />
-  <img src="https://forthebadge.com/images/badges/made-with-javascript.svg" />
+# A general purpose discord bot
+<p align="center">  
+<img src="https://forthebadge.com/images/badges/built-with-love.svg" />
+<img src="https://forthebadge.com/images/badges/made-with-javascript.svg" />
 <br><br>
 
 <p>Bisly is a general purpose discord bot with commands ranging from general to moderation, and from fun to some cute animal commands. With over 45 commands, you won't regret using Bisly.<br>
