@@ -1,7 +1,7 @@
 # NOTICE
-<b>This is to inform everyone that, on 10th of October, 2021, Bisly had been deleted from Discord and the Github repository had been archived. No Further development will be taken place and the project has been closed. The developer saw no benefits to continue and improve on Bisly. Programming of Bisly has been a great learning experience for the developer, but he had to close down the project because of no further benefits and less time being devoted by him to programming since last year.
+<b>This is to inform everyone that, on 10th of October, 2021, Bisly has been deleted from Discord and the Github repository has been archived. No Further development will be taken place and the project has been closed. The developer saw no benefits to continue development and improve on Bisly. Programming of Bisly has been a great learning experience for the developer, but he had to close down the project because of no further benefits and less time being devoted by him to programming since last year.
 
-We thank all the contributors and people who have in any way helped in the development of Bisly.</b>
+We thank all the contributors who have in any way helped in the development of Bisly and everyone who have used and supported Bisly.</b>
 
 ---
 
